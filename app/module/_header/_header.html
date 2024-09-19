@@ -1,1 +1,106 @@
-<p>Header</p>
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <nav class="nav">
+        <button class="nav-btn" type="button">Записаться</button>
+        <ul class="menu">
+          {% if pageSlug != 'home' %}
+          <li class="menu__item">
+            <a class="menu__link" href="index.html">Главная</a>
+          </li>
+          {% endif %}
+          <li class="menu__item">
+            <button
+              class="menu__link menu__btn {{ 'menu__link--active' if (pageSlug == 'about' or pageSlug == 'teachers') }}"
+            >
+              О нас
+            </button>
+            <ul class="menu__sub">
+              <li class="menu__item">
+                {% if pageSlug == 'about' %}
+                <span class="menu__link menu__link--active">О школе</span>
+                {% else %}
+                <a class="menu__link" href="#">О школе</a>
+                {% endif %}
+              </li>
+              <li class="menu__item">
+                {% if pageSlug == 'teachers' %}
+                <span class="menu__link menu__link--active">Учителя</span>
+                {% else %}
+                <a class="menu__link" href="#">Учителя</a>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+          <li i class="menu__item">
+            {% if pageSlug == 'courses' %}
+            <span class="menu__link menu__link--active">Курсы</span>
+            {% else %}
+            <a class="menu__link" href="#">Курсы</a>
+            {% endif %}
+          </li>
+          <li i class="menu__item">
+            {% if pageSlug == 'blog' %}
+            <span class="menu__link menu__link--active">Блог</span>
+            {% else %}
+            <a class="menu__link" href="#">Блог</a>
+            {% endif %}
+          </li>
+          <li i class="menu__item">
+            {% if pageSlug == 'contacts' %}
+            <span class="menu__link menu__link--active">Контакты</span>
+            {% else %}
+            <a class="menu__link" href="#">Контакты</a>
+            {% endif %}
+          </li>
+        </ul>
+      </nav>
+      <a class="header__logo" href="index.html">
+        <img
+          class="header__logo__img"
+          src="images/logo.svg"
+          alt="Логотип в виде слона"
+        />
+      </a>
+      <div class="user-menu">
+        <form class="user-menu__form" action="submit">
+          <input
+            class="user-menu__form-input"
+            type="text"
+            id="user-menu__search"
+            name="user-menu__search"
+            placeholder="Поиск"
+          />
+          <button class="user-menu__form-btn" type="submit">
+            <span class="visually-hidden">Искать</span>
+          </button>
+        </form>
+        <button class="user-menu__btn" href="#">
+          <div class="user-menu__btn-img">
+            <svg
+              width="11"
+              height="14"
+              fill="none"
+              viewBox="0 0 11 14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.667 1H9a1.333 1.333 0 0 1 1.333 1.333v9.334A1.333 1.333 0 0 1 9 13H3.667m4-6L5 4.333M7.667 7 5 9.667M7.667 7H1"
+                stroke="#262626"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span>Войти</span>
+        </button>
+        <a class="user-menu__btn" href="#">
+          <div class="user-menu__btn-img">
+
+          </div>
+          <span>Имяяяяя</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

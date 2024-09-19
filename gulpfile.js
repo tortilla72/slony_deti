@@ -3,8 +3,11 @@ const { src, dest, watch, parallel, series } = require('gulp');
 const browserSync = require('browser-sync').create();
 
 const nunjucksRender = require('gulp-nunjucks-render');
+
 const scss = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
+const groupMedia = require('gulp-group-css-media-queries');
 const removeComments = require('gulp-strip-css-comments');
 const rename = require('gulp-rename');
 
@@ -15,6 +18,7 @@ const newer = require('gulp-newer');
 const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
+const svgmin = require('gulp-svgmin');
 const svgSprite = require('gulp-svg-sprite');
 
 const fonter = require('gulp-fonter');
@@ -32,7 +36,7 @@ function nunjucksModule() {
     .pipe(browserSync.stream());
 }
 
-function nunjucksPages() {
+function nunjucks() {
   return src('app/njk/*.njk')
     .pipe(nunjucksRender())
     .pipe(dest('app'))
@@ -42,11 +46,13 @@ function nunjucksPages() {
 
 function styles() {
   return src(['app/scss/*.scss'])
+    .pipe(sourcemaps.init()) //Закомментировать при build
     .pipe(
       scss({
         outputStyle: 'compressed', //expanded
       })
     )
+    .pipe(groupMedia())
     .pipe(
       autoprefixer({
         grid: 'autoplace',
@@ -59,6 +65,7 @@ function styles() {
         suffix: '.min',
       })
     )
+    .pipe(sourcemaps.write()) //Закомментировать при build
     .pipe(dest('app/css'))
     .pipe(browserSync.stream());
 }
@@ -67,7 +74,6 @@ function scripts() {
   return (
     src(['app/js/*.js', '!app/js/*.min.js'])
       .pipe(rigger())
-      /*.pipe(uglify())*/
       .pipe(
         rename({
           suffix: '.min',
@@ -98,11 +104,21 @@ function images() {
 function sprite() {
   return src('app/images/src/sprite/**/*.svg')
     .pipe(
+      svgmin({
+        js2svg: {
+          pretty: true,
+        },
+      })
+    )
+    .pipe(
       svgSprite({
         mode: {
+          css: {
+            layout: 'diagonal',
+          },
           stack: {
             sprite: '../sprite.svg',
-            example: true,
+            example: false,
           },
         },
       })
@@ -129,12 +145,12 @@ function watching() {
     },
   });
 
-  watch(['app/**/*.njk'], series(nunjucksModule, nunjucksPages));
-  watch(['app/scss/*.scss'], styles);
+  watch(['app/njk/*.njk', 'app/module/**/*.html'], nunjucks);
+  watch(['app/scss/*.scss', 'app/module/**/*.scss'], styles);
   watch(['app/images/src'], images);
   watch(['app/module/**/*.js', 'app/js/**/*.js', '!app/js/**/*.min.js'], scripts);
   watch(['app/fonts/src'], fonts);
-  watch(['app/**/*.html']).on('change', browserSync.reload);
+  watch(['app/*.html']).on('change', browserSync.reload);
 }
 
 function cleanDist() {
@@ -145,13 +161,17 @@ function building() {
   return src(
     [
       'app/css/style.min.css',
+      'app/images/**/*.*',
       '!app/images/**/*.html',
-      'app/images/*.*',
-      '!app/images/*.svg',
-      'app/images/sprite.svg',
+      '!app/images/**/*.html',
+      '!app/images/src/**',
+      '!app/images/sprite/**',
       'app/fonts/*.*',
       'app/js/main.min.js',
       'app/**/*.html',
+      '!app/module/**/*.html',
+      'app/*.ico',
+      'app/favic.webmanifest',
     ],
     { base: 'app' }
   ).pipe(dest('docs'));
@@ -159,8 +179,8 @@ function building() {
 
 
 exports.sprite = sprite;
-exports.nunjucksModule = nunjucksModule;
-exports.nunjucksPages = nunjucksPages;
+//exports.nunjucksModule = nunjucksModule;
+exports.nunjucks = nunjucks;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
@@ -169,4 +189,5 @@ exports.building = building;
 exports.watching = watching;
 
 exports.build = series(cleanDist, building);
-exports.default = parallel(series(nunjucksModule, nunjucksPages),styles, images, scripts, watching);
+//exports.default = parallel(series(nunjucksModule, nunjucksPages),styles, images, fonts, scripts, watching);
+exports.default = parallel(nunjucks,styles, images, fonts, scripts, watching);

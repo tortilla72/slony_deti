@@ -1,5 +1,26 @@
-$default: #8d8d8d;
-$title: #29282d;
-$accent: #fe3e57;
-$bg: #f6f6f6;
-$line: #ececec;
+$text: #262626;
+$text-light: #fff;
+$title: #262626;
+$text-copy: #848484;
+
+$bg: #fff;
+$bg-light: #f0f0f0;
+$bg-dark: #cdcdcd;
+
+$accent-light: #f6b569;
+$accent-dark: #718cd2;
+
+$placeholder: #bcbcbc;
+$outline:  2px solid #718cd2;
+$outline-light: 2px solid #f6b569;
+
+
+$header-shadow: 0px 4px 9px rgba(0, 0, 0, 0.05);
+$headerbtn-border: 1px;
+/*$header-accent: #F6B569;*/
+$headerbtn-gradient: linear-gradient(#ffc978, #f6b569);
+$headerbtn-shadow: 0 1px 5px rgba(69, 69, 69, 0.05);
+$menu-hover: rgba(0, 0, 0, 0.05);
+$search_shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 5%);
+
+$transition-link: background 0.3s ease;

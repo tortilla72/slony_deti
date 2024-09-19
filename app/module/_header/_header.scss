@@ -1,3 +1,237 @@
 .header {
-  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: $bg;
+  box-shadow: $header-shadow;
+  z-index: 10;
+  opacity: 1;
+  transition: transform 0.4s, opacity 0.4s, position 0.4s;
+
+  &--out {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.header__inner {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 1.143;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu > li {
+  position: relative;
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 7px 10px;
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  transition: $transition-link;
+  caret-color: transparent;
+
+  &:focus {
+    background-color: $menu-hover;
+    outline: none;
+  }
+  &--active {
+    background-color: $menu-hover;
+    outline: none;
+  }
+}
+
+.menu__sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  padding: 15px;
+  list-style: none;
+}
+
+.menu__sub li + li {
+  margin: 5px 0 0 0;
+}
+
+.menu__sub .menu__link {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.header__logo {
+  width: 70px;
+  height: 60px;
+  /* margin: 0 20px;*/
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+}
+
+.header__logo-img {
+  display: block;
+  max-width: 100%;
+}
+
+.user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.user-menu__form {
+  position: relative;
+  width: 397px;
+  min-width: 200px;
+  height: 3rem;
+  margin-right: 35px;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  border: 1px solid $text;
+  border-radius: 10px;
+  box-shadow: $search_shadow;
+}
+
+.user-menu__form-input,
+.user-menu__form-btn {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+}
+.user-menu__form-input {
+  margin: 0;
+  padding: 0 50px 0 17px;
+  width: 100%;
+}
+.user-menu__form-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 42px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    margin: 0 auto;
+    display: block;
+    background-image: url('../../images/sprite.svg#search-icon');
+    background-position: center;
+  }
+}
+
+.user-menu__btn {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 300;
+  color: $text;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.user-menu__btn + .user-menu__btn {
+  padding-left: 10px;
+}
+.user-menu__btn-img svg {
+  path {
+    stroke: #262626;
+  }
+}
+
+body._pc {
+  .menu li:hover > .menu__link {
+    background-color: $menu-hover;
+  }
+  .menu > li:hover .menu__sub {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0deg);
+    pointer-events: all;
+  }
+  .user-menu__btn:hover {
+    color: $accent-light;
+  }
+  .user-menu__btn:hover svg {
+    path {
+      stroke: $accent-light;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .menu > li {
+    margin-left: 15px;
+    padding: 10px 0; /* для создания мостика у подменю */
+  }
+
+  .menu__sub {
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    transition: 0.3s linear;
+    visibility: hidden;
+    pointer-events: none;
+    background-color: $bg;
+    border-radius: 10px;
+    box-shadow: $header-shadow;
+  }
+  .menu > li:focus-within > .menu__sub {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0deg);
+    pointer-events: all;
+  }
+
+  .menu__btn {
+    position: relative;
+    padding-right: 27px;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      right: 7px;
+      width: 12px;
+      height: 8px;
+      background-image: url('../../images/sprite.svg#chevron-down');
+      background-repeat: no-repeat;
+      transform-origin: center;
+    }
+  }
 }

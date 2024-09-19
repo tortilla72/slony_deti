@@ -1,0 +1,107 @@
+html {
+   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a:focus,
+button:focus,
+input:focus {
+  outline: $outline;
+}
+
+input[type='text'] {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.1875;
+  letter-spacing: 0;
+  color: $text;
+  background-color: $bg;
+}
+
+.main {
+  padding-top: 80px;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.nav-btn {
+  position: relative;
+  padding: 0 27px;
+  display: block;
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  color: $text;
+  text-align: center;
+  background-color: $bg;
+  border: solid $headerbtn-border transparent;
+  border-radius: 20px;
+  background-clip: padding-box;
+  box-shadow: $headerbtn-shadow;
+  cursor: pointer;
+  transition: $transition-link;
+  caret-color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -$headerbtn-border;
+    border-radius: inherit;
+    background: $headerbtn-gradient;
+    z-index: -1;
+  }
+
+  &:focus {
+    outline: 1px solid transparent;
+    background: $headerbtn-gradient;
+  }
+}
+
+body._pc {
+  .nav-btn:hover {
+    background-color: transparent;
+  }
+}
