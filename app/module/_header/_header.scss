@@ -139,7 +139,7 @@
     height: 18px;
     margin: 0 auto;
     display: block;
-    background-image: url('../../images/sprite.svg#search-icon');
+    background-image: url('../images/sprite.svg#search-icon');
     background-position: center;
   }
 }
@@ -229,7 +229,7 @@ body._pc {
       right: 7px;
       width: 12px;
       height: 8px;
-      background-image: url('../../images/sprite.svg#chevron-down');
+      background-image: url('../images/sprite.svg#chevron-down');
       background-repeat: no-repeat;
       transform-origin: center;
     }

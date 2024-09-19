@@ -68,7 +68,7 @@
     right: 21px;
     width: 12px;
     height: 8px;
-    background-image: url('../../images/sprite.svg#chevron-up');
+    background-image: url('../images/sprite.svg#chevron-up');
     background-repeat: no-repeat;
     transform-origin: center;
   }
@@ -134,19 +134,19 @@
 }
 
 .footer__social-link--telegram {
-  background-image: url('../../images/sprite.svg#telegram-icon');
+  background-image: url('../images/sprite.svg#telegram-icon');
 }
 .footer__social-link--facebook {
-  background-image: url('../../images/sprite.svg#facebook-icon');
+  background-image: url('../images/sprite.svg#facebook-icon');
 }
 .footer__social-link--instagram {
-  background-image: url('../../images/sprite.svg#instagram-icon');
+  background-image: url('../images/sprite.svg#instagram-icon');
 }
 .footer__social-link--youtube {
-  background-image: url('../../images/sprite.svg#youtube-icon');
+  background-image: url('../images/sprite.svg#youtube-icon');
 }
 .footer__social-link--tiktok {
-  background-image: url('../../images/sprite.svg#tiktok-icon');
+  background-image: url('../images/sprite.svg#tiktok-icon');
 }
 
 .footer__bottom {
@@ -173,18 +173,18 @@ body._pc {
   }
 
   .footer__social-link--telegram:hover {
-    background-image: url('../../images/sprite.svg#telegram-icon-hover');
+    background-image: url('../images/sprite.svg#telegram-icon-hover');
   }
   .footer__social-link--facebook:hover {
-    background-image: url('../../images/sprite.svg#facebook-icon-hover');
+    background-image: url('../images/sprite.svg#facebook-icon-hover');
   }
   .footer__social-link--instagram:hover {
-    background-image: url('../../images/sprite.svg#instagram-icon-hover');
+    background-image: url('../images/sprite.svg#instagram-icon-hover');
   }
   .footer__social-link--youtube:hover {
-    background-image: url('../../images/sprite.svg#youtube-icon-hover');
+    background-image: url('../images/sprite.svg#youtube-icon-hover');
   }
   .footer__social-link--tiktok:hover {
-    background-image: url('../../images/sprite.svg#tiktok-icon-hover');
+    background-image: url('../images/sprite.svg#tiktok-icon-hover');
   }
 }
