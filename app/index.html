@@ -12,7 +12,8 @@
   <link rel="manifest" href="favic.webmanifest">
 </head>
 <body>
-  <header class="header">
+  <div class="wrapper">
+    <header class="header">
   <div class="container">
     <div class="header__inner">
       <nav class="nav">
@@ -75,44 +76,26 @@
             <span class="visually-hidden">Искать</span>
           </button>
         </form>
-        <button class="user-menu__btn" href="#">
-          <div class="user-menu__btn-img">
-            <svg
-              width="11"
-              height="14"
-              fill="none"
-              viewBox="0 0 11 14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.667 1H9a1.333 1.333 0 0 1 1.333 1.333v9.334A1.333 1.333 0 0 1 9 13H3.667m4-6L5 4.333M7.667 7 5 9.667M7.667 7H1"
-                stroke="#262626"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+        <a class="user-menu__btn user-menu__btn--sign" href="#">
           <span>Войти</span>
-        </button>
-        <a class="user-menu__btn" href="#">
-          <div class="user-menu__btn-img">
-
-          </div>
-          <span>Имяяяяя</span>
+        </a>
+        <a class="user-menu__btn user-menu__btn--cart" href="#">
+          <span>Корзина</span>
+          <span class="user-menu__btn-num">12</span>
         </a>
       </div>
     </div>
   </div>
 </header>
 
-  <main class="main">
-	  
+    <main class="main">
+	   
 	<div class="container">
 sdfds zsz
 	</div>
 
-  </main>
-  <footer class="footer">
+    </main>
+    <footer class="footer">
   <div class="container">
     <div class="footer__top">
       <div class="footer__nav">
@@ -141,13 +124,11 @@ sdfds zsz
     </div>
     <div class="footer__wrapper">
       <div class="footer__inner">
-       <!-- <div class="footer__logo"> -->
-        <img
+       <img
           class="footer__logo"
           src="images/footer-logo.svg"
           alt="Логотип с изображением слона"
         />
-       <!-- </div> -->
         <ul class="footer__doc-list">
           <li class="footer__doc-item">
             <a class="footer__doc-link" href="#">
@@ -185,11 +166,9 @@ sdfds zsz
     </div>
   </div>
 </footer>
-
-
-   
+  </div>
+  
 	<script src="js/main.min.js"></script>
-
 
 </body>
 </html>

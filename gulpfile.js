@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const nunjucksRender = require('gulp-nunjucks-render');
 
 const scss = require('gulp-sass')(require('sass'));
+const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
@@ -47,9 +48,10 @@ function nunjucks() {
 function styles() {
   return src(['app/scss/*.scss'])
     .pipe(sourcemaps.init()) //Закомментировать при build
+    .pipe(sassGlob())
     .pipe(
       scss({
-        outputStyle: 'compressed', //expanded
+        outputStyle: 'compressed', //expanded  compressed
       })
     )
     .pipe(groupMedia())
@@ -113,12 +115,9 @@ function sprite() {
     .pipe(
       svgSprite({
         mode: {
-          css: {
-            layout: 'diagonal',
-          },
           stack: {
             sprite: '../sprite.svg',
-            example: false,
+            example: true,
           },
         },
       })
@@ -160,16 +159,14 @@ function cleanDist() {
 function building() {
   return src(
     [
-      'app/css/style.min.css',
+      'app/**/*.html',
       'app/images/**/*.*',
-      '!app/images/**/*.html',
-      '!app/images/**/*.html',
+      '!app/module/**',
+      '!app/images/stack/**',
       '!app/images/src/**',
-      '!app/images/sprite/**',
+      'app/css/style.min.css',
       'app/fonts/*.*',
       'app/js/main.min.js',
-      'app/**/*.html',
-      '!app/module/**/*.html',
       'app/*.ico',
       'app/favic.webmanifest',
     ],

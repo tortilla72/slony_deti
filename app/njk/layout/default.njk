@@ -12,13 +12,13 @@
   <link rel="manifest" href="favic.webmanifest">
 </head>
 <body>
-  {% include "app/module/_header/_header.html" %}
-  <main class="main">
-	  {% block content %}{% endblock %}
-  </main>
-  {% include "app/module/_footer/_footer.html" %}
-
-   {% block scripts %}{% endblock %}
-
+  <div class="wrapper">
+    {% include "app/module/_header/_header.html" %}
+    <main class="main">
+	   {% block content %}{% endblock %}
+    </main>
+    {% include "app/module/_footer/_footer.html" %}
+  </div>
+  {% block scripts %}{% endblock %}
 </body>
 </html>
