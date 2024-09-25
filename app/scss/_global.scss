@@ -1,5 +1,5 @@
 html {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -46,12 +46,13 @@ body {
 .main {
   padding-top: 80px;
   flex-grow: 1;
+  min-height: 2000px;
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 .visually-hidden {
   position: absolute;
@@ -64,6 +65,64 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.burger-btn {
+  position: relative;
+  width: 29px;
+  height: 19px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  outline-offset: 4px;
+  caret-color: transparent;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $text;
+    border-radius: 1px;
+    transition: all 0.4s;
+  }
+
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+
+  .burger-btn__center {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $text;
+    border-radius: 1px;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+}
+
+.burger-btn--close {
+  .burger-btn__center {
+    opacity: 0;
+  }
+
+  &::before {
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    bottom: 9px;
+    transform: rotate(45deg);
+  }
 }
 
 .nav-btn {
@@ -107,5 +166,6 @@ body {
 body._pc {
   .nav-btn:hover {
     background-color: transparent;
+    color: #fff;
   }
 }

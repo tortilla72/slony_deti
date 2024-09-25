@@ -17,19 +17,33 @@
   <div class="container">
     <div class="header__inner">
       <nav class="nav">
-        <button class="nav-btn" type="button">Записаться</button>
+        <a class="header__logo" href="index.html">
+          <img
+            class="header__logo-img"
+            src="images/logo.svg"
+            alt="Логотип в виде слона"
+          />
+        </a>
+        <button class="burger-btn" type="button">
+          <span class="burger-btn__center"></span>
+          <span class="visually-hidden">Кнопка открытия выпадающего меню</span>
+        </button>
         <ul class="menu">
           
           <li class="menu__item">
+            <a class="menu__link" href="index.html">Главная</a>
+          </li>
+          
+          <li class="menu__item menu__item--sub">
             <button
-              class="menu__link menu__btn "
+              class="menu__link menu__btn  menu__link--active"
             >
               О нас
             </button>
             <ul class="menu__sub">
               <li class="menu__item">
                 
-                <a class="menu__link" href="#">О школе</a>
+                <span class="menu__link menu__link--active">О школе</span>
                 
               </li>
               <li class="menu__item">
@@ -39,31 +53,25 @@
               </li>
             </ul>
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             
             <a class="menu__link" href="#">Курсы</a>
             
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             
             <a class="menu__link" href="#">Блог</a>
             
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             
             <a class="menu__link" href="#">Контакты</a>
             
           </li>
         </ul>
       </nav>
-      <a class="header__logo" href="index.html">
-        <img
-          class="header__logo__img"
-          src="images/logo.svg"
-          alt="Логотип в виде слона"
-        />
-      </a>
       <div class="user-menu">
+        <button class="nav-btn" type="button">Записаться</button>
         <form class="user-menu__form" action="submit">
           <input
             class="user-menu__form-input"
@@ -72,8 +80,8 @@
             name="user-menu__search"
             placeholder="Поиск"
           />
-          <button class="user-menu__form-btn" type="submit">
-            <span class="visually-hidden">Искать</span>
+          <button class="user-menu__form-btn" type="button">
+            <span class="visually-hidden">Открыть форму для поиска.</span>
           </button>
         </form>
         <a class="user-menu__btn user-menu__btn--sign" href="#">
@@ -95,7 +103,7 @@ sdfds zsz
 	</div>
 
     </main>
-    <footer class="footer">
+   <footer class="footer">
   <div class="container">
     <div class="footer__top">
       <div class="footer__nav">
@@ -124,11 +132,13 @@ sdfds zsz
     </div>
     <div class="footer__wrapper">
       <div class="footer__inner">
-       <img
-          class="footer__logo"
-          src="images/footer-logo.svg"
-          alt="Логотип с изображением слона"
-        />
+        <a class="footer__logo-link" href="#">
+          <img
+            class="footer__logo-img"
+            src="images/footer-logo.svg"
+            alt="Логотип с изображением слона"
+          />
+        </a>
         <ul class="footer__doc-list">
           <li class="footer__doc-item">
             <a class="footer__doc-link" href="#">
@@ -144,19 +154,39 @@ sdfds zsz
         </ul>
         <ul class="footer__social-list">
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--telegram" href="#" target="_blank"></a>
+            <a
+              class="footer__social-link footer__social-link--telegram"
+              href="#"
+              target="_blank"
+            ></a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--facebook" href="#" target="_blank"></a>
+            <a
+              class="footer__social-link footer__social-link--facebook"
+              href="#"
+              target="_blank"
+            ></a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--instagram" href="#" target="_blank"></a>
+            <a
+              class="footer__social-link footer__social-link--instagram"
+              href="#"
+              target="_blank"
+            ></a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--youtube" href="#" target="_blank"></a>
+            <a
+              class="footer__social-link footer__social-link--youtube"
+              href="#"
+              target="_blank"
+            ></a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--tiktok" href="#" target="_blank"></a>
+            <a
+              class="footer__social-link footer__social-link--tiktok"
+              href="#"
+              target="_blank"
+            ></a>
           </li>
         </ul>
       </div>
@@ -166,6 +196,7 @@ sdfds zsz
     </div>
   </div>
 </footer>
+
   </div>
   
 	<script src="js/main.min.js"></script>

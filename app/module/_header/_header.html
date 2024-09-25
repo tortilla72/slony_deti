@@ -2,16 +2,26 @@
   <div class="container">
     <div class="header__inner">
       <nav class="nav">
-        <button class="nav-btn" type="button">Записаться</button>
+        <a class="header__logo" href="index.html">
+          <img
+            class="header__logo-img"
+            src="images/logo.svg"
+            alt="Логотип в виде слона"
+          />
+        </a>
+        <button class="burger-btn" type="button">
+          <span class="burger-btn__center"></span>
+          <span class="visually-hidden">Кнопка открытия выпадающего меню</span>
+        </button>
         <ul class="menu">
           {% if pageSlug != 'home' %}
           <li class="menu__item">
             <a class="menu__link" href="index.html">Главная</a>
           </li>
           {% endif %}
-          <li class="menu__item">
+          <li class="menu__item menu__item--sub">
             <button
-              class="menu__link menu__btn {{ 'menu__link--active' if (pageSlug == 'about' or pageSlug == 'teachers') }}"
+              class="menu__link menu__btn  {{ 'menu__link--active' if (pageSlug == 'about' or pageSlug == 'teachers') }}"
             >
               О нас
             </button>
@@ -32,21 +42,21 @@
               </li>
             </ul>
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             {% if pageSlug == 'courses' %}
             <span class="menu__link menu__link--active">Курсы</span>
             {% else %}
             <a class="menu__link" href="#">Курсы</a>
             {% endif %}
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             {% if pageSlug == 'blog' %}
             <span class="menu__link menu__link--active">Блог</span>
             {% else %}
             <a class="menu__link" href="#">Блог</a>
             {% endif %}
           </li>
-          <li i class="menu__item">
+          <li class="menu__item">
             {% if pageSlug == 'contacts' %}
             <span class="menu__link menu__link--active">Контакты</span>
             {% else %}
@@ -55,14 +65,8 @@
           </li>
         </ul>
       </nav>
-      <a class="header__logo" href="index.html">
-        <img
-          class="header__logo__img"
-          src="images/logo.svg"
-          alt="Логотип в виде слона"
-        />
-      </a>
       <div class="user-menu">
+        <button class="nav-btn" type="button">Записаться</button>
         <form class="user-menu__form" action="submit">
           <input
             class="user-menu__form-input"
@@ -71,8 +75,8 @@
             name="user-menu__search"
             placeholder="Поиск"
           />
-          <button class="user-menu__form-btn" type="submit">
-            <span class="visually-hidden">Искать</span>
+          <button class="user-menu__form-btn" type="button">
+            <span class="visually-hidden">Открыть форму для поиска.</span>
           </button>
         </form>
         <a class="user-menu__btn user-menu__btn--sign" href="#">
