@@ -78,4 +78,22 @@ $('.burger-btn').on('click', function () {
 });
 
 // Скрываем кнопку корзины если она пустая
-alert ($('.user-menu__btn .user-menu__btn--cart ').text());
+let cartNum = parseInt($('.user-menu__btn .user-menu__btn--cart ').text());
+let btnNum = $('.user-menu__btn--cart .user-menu__btn-num');
+
+if (cartNumNew > 0) {
+  btnNum.show();
+} else {
+  btnNum.hide();
+}
+
+/*
+$('.user-menu__btn .user-menu__btn--cart ').on('change', function () {
+  let cartNumNew = parseInt($(this).text());
+  if (cartNumNew > 0) {
+    btnNum.show();
+  } else {
+    btnNum.hide();
+  }
+});
+*/
