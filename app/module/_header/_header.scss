@@ -17,6 +17,7 @@
 
 .header__inner {
   min-height: 80px;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -307,7 +308,7 @@ body._pc {
   }
 
   .user-menu {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     justify-content: flex-end;
   }
 }
@@ -379,6 +380,9 @@ body._pc {
 }
 
 @media (max-width: 568px) {
+  .menu {
+    min-width: 100%;
+  }
   .user-menu__form {
     margin-top: 20px;
     margin-left: 0;
