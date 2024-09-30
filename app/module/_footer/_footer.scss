@@ -283,8 +283,11 @@ body._touch {
     display: block;
   }
   .footer__menu {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .footer__menu-item {
+    flex: 1;
   }
   .footer__wrapper-btn {
     justify-content: end;
@@ -311,7 +314,7 @@ body._touch {
     margin-left: 10px;
   }
   .footer__doc-list {
-    display: block;
+    grid-template-columns: 1fr;
   }
   .footer__doc-item {
     max-width: none;

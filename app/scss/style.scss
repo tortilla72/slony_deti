@@ -9,8 +9,45 @@
 @import '../module/_header/_header';
 @import '../module/_footer/_footer';
 
+/** index.scss **/
+.banner {
+  margin: 50px 0 100px;
+  display: flex;
+}
 
+.banner__inner {
+  margin-right: 50px;
+  padding: 110px 22px 100px 60px;
+  width: 60.345%;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
 
+.banner__title {
+  margin-bottom: 29px;
+}
+
+.banner__text {
+  margin-bottom: 41px;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.banner__btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__btn-wrapper-text {
+  margin: 0 auto 0 21px;
+  max-width: 230px;
+  line-height: 1.4rem;
+  color: $text-copy;
+}
+
+/** index.scss **/
 
 
 @import 'media';
