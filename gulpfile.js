@@ -51,7 +51,7 @@ function styles() {
     .pipe(sassGlob())
     .pipe(
       scss({
-        outputStyle: 'compressed', //expanded  compressed
+        outputStyle: 'expanded', //expanded  compressed
       })
     )
     .pipe(groupMedia())

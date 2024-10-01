@@ -2,6 +2,7 @@ $text: #262626;
 $text-light: #fff;
 $title: #262626;
 $text-copy: #848484;
+$breadcrumbs-active: #9b9b9b;
 
 $accent-light: #f6b569;
 $accent-dark: #718cd2;
@@ -25,6 +26,7 @@ $headerbtn-shadow: 0 1px 5px rgba(69, 69, 69, 0.05);
 $menu-hover: rgba(0, 0, 0, 0.05);
 $search_shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 5%);
 
-$transition-link: background 0.3s ease;
+$transition-btn: all 0.3s ease;
+$transition-link: color 0.3s ease;
 
 $radius: 30px;

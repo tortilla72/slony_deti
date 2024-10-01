@@ -5,8 +5,8 @@
 @import 'libs';
 @import 'global';
 
-
 @import '../module/_header/_header';
+@import '../module/_breadcrumbs/_breadcrumbs';
 @import '../module/_footer/_footer';
 
 /** index.scss **/
@@ -18,7 +18,7 @@
 .banner__inner {
   margin-right: 50px;
   padding: 110px 22px 100px 60px;
-  width: 60.345%;
+  min-width: 60.345%;
   background-color: $bg-light;
   border-radius: $radius;
 }
@@ -34,20 +34,32 @@
   line-height: 3.2rem;
 }
 
-.banner__btn-wrapper {
+.form-btn-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.banner__btn-wrapper-text {
-  margin: 0 auto 0 21px;
+.form-btn-wrapper__text {
   max-width: 230px;
   line-height: 1.4rem;
   color: $text-copy;
 }
 
-/** index.scss **/
+.banner__btn__text {
+  margin: 0 auto 0 21px;
+}
 
+.banner__box-img {
+  border-radius: $radius;
+}
+.banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $radius;
+}
+
+/** index.scss **/
 
 @import 'media';
