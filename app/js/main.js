@@ -28,6 +28,7 @@ if (isMobile.any()){
 }else {
    document.body.classList.add('_pc');
 }
+
 //= ../../node_modules/jquery/dist/jquery.js
 //= ../../node_modules/locomotive-scroll/dist/locomotive-scroll.js
 $(function () {

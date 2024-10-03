@@ -1,7 +1,5 @@
 @import 'vars';
 @import 'fonts';
-@import 'vendor/normalize';
-/*@import 'vendor/_family';*/
 @import 'libs';
 @import 'global';
 
@@ -10,24 +8,34 @@
 @import '../module/_footer/_footer';
 
 /** index.scss **/
-.banner {
-  margin: 50px 0 100px;
-  display: flex;
+.preview {
+  padding-top: 50px;
 }
 
-.banner__inner {
-  margin-right: 50px;
-  padding: 110px 22px 100px 60px;
+.preview__inner {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+.preview__content {
+  padding: 110px 60px 100px 60px;
   min-width: 60.345%;
   background-color: $bg-light;
   border-radius: $radius;
 }
 
-.banner__title {
+.preview__title {
   margin-bottom: 29px;
+  line-height: 1.22917;
 }
 
-.banner__text {
+.preview__img {
+  width: 100%;
+  border-radius: $radius;
+}
+
+.preview__text {
   margin-bottom: 41px;
   font-weight: 500;
   font-size: 2.4rem;
@@ -36,8 +44,8 @@
 
 .form-btn-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 21px;
 }
 
 .form-btn-wrapper__text {
@@ -46,20 +54,69 @@
   color: $text-copy;
 }
 
-.banner__btn__text {
-  margin: 0 auto 0 21px;
+.offer-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 60.345%;
+  grid-template-rows: repeat(2, 1fr);
+  gap: $gap;
+  list-style: none;
 }
 
-.banner__box-img {
+.offer__item {
+  position: relative;
+  min-height: 30rem;
+  padding: 50px 50px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $bg-light;
+  border-radius: $radius;
+  text-align: left;
+  transition: $transition-btn;
+
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(odd):nth-child(n+3) {
+    padding: 40px 50px 37px 116px;
+    text-align: right;
+  }
+}
+
+.offer__item-main {
+  min-width: auto;
+  grid-area: 1 / 1 / 3 / 1;
+}
+
+.offer__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-radius: $radius;
 }
-.banner__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: $radius;
+
+.offer__title {
+  margin: 0 0 50px;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+}
+
+.offer__text {
+  margin: 0;
+  font-size: 2.4rem;
 }
 
 /** index.scss **/
+
+body._pc {
+  .offer__item:hover {
+    color: $text-light;
+    background-color: $bg-dark;
+  }
+}
 
 @import 'media';

@@ -15,12 +15,10 @@
   <div class="wrapper">
     {% include "app/module/_header/_header.html" %}
     <main class="main">
-      <div class="container">
-        {% if pageSlug != 'home' %}
-          {% include "app/module/_breadcrumbs/_breadcrumbs.html" %}
-        {% endif %}
-	      {% block content %}{% endblock %}
-      </div>
+      {% if pageSlug != 'home' %}
+        {% include "app/module/_breadcrumbs/_breadcrumbs.html" %}
+      {% endif %}
+	    {% block content %}{% endblock %}
     </main>
    {% include "app/module/_footer/_footer.html" %}
   </div>

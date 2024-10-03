@@ -54,6 +54,7 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -67,12 +68,17 @@ body {
   overflow: hidden;
 }
 
-.page-title {
-  margin: 0;
+.section {
+  margin-top: 100px;
+}
+
+.page-title,
+.title {
+  margin: 0 0 25px 0;
   font-family: 'Comfortaa', sans-serif;
   font-weight: 600;
   font-size: 4.8rem;
-  line-height: 5.9rem;
+  line-height: 1.125;
 }
 
 .burger-btn {
@@ -178,7 +184,7 @@ body {
   font-family: 'DMSans', sans-serif;
   font-weight: 400;
   font-size: 2.4rem;
-  line-height: 3.1rem;
+  line-height: 1.392;
   color: $text;
   background-color: transparent;
   border: 1px solid $text;

@@ -29,7 +29,7 @@ $(window).on('scroll', function () {
 });
 
 // Деактивируем кнопку для выпадающего меню в случае бургер-меню
-if (window.matchMedia('(max-width: 768px)')) {
+if (window.matchMedia('(max-width: 700px)')) {
   $('.menu__btn').prop('disabled', true);
 }
 
