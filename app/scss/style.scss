@@ -20,7 +20,7 @@
 
 .preview__content {
   padding: 110px 60px 100px 60px;
-  min-width: 60.345%;
+  max-width: 60.345%;
   background-color: $bg-light;
   border-radius: $radius;
 }
@@ -28,6 +28,9 @@
 .preview__title {
   margin-bottom: 29px;
   line-height: 1.22917;
+}
+
+.preview__box-img {
 }
 
 .preview__img {
@@ -38,8 +41,8 @@
 .preview__text {
   margin-bottom: 41px;
   font-weight: 500;
-  font-size: 2.4rem;
-  line-height: 3.2rem;
+  font-size: $font-card;
+  line-height: 1.333;
 }
 
 .form-btn-wrapper {
@@ -103,11 +106,13 @@
   font-family: "Comfortaa", sans-serif;
   font-weight: 400;
   font-size: 3.6rem;
+  line-height: 1.111;
 }
 
 .offer__text {
   margin: 0;
   font-size: 2.4rem;
+  line-height: 1.333;
 }
 
 /** index.scss **/

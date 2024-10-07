@@ -11,6 +11,16 @@
     padding: 110px 30px 100px;
   }
 
+  .offer-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-mobile;
+  }
+
+  .offer__item:nth-child(2),
+  .offer__item:nth-child(3),
+  .offer__item:nth-child(odd):nth-child(n + 3) {
+    padding: 40px 50px 37px;
+  }
 }
 
 @media (max-width: 864px) {
@@ -20,10 +30,25 @@
 
   .preview__content {
     padding: 110px 60px 100px;
+    max-width: none;
   }
 
   .preview__box-img {
     order: -1;
+  }
+
+  .offer-list {
+    grid-template-columns: 1fr;
+  }
+  .offer__item-main {
+    grid-area: 1 / 1;
+  }
+
+  .offer__item:nth-child(2),
+  .offer__item:nth-child(3),
+  .offer__item:nth-child(odd):nth-child(n + 3) {
+    padding: 50px 50px 46px;
+    text-align: left;
   }
 }
 
@@ -47,11 +72,32 @@
   }
 
   .preview__content {
-    padding: 80px 30px;
+    padding: 80px $padding-side-mobile;
+  }
+
+  .preview__text {
+    font-size: $font-card-small;
+  }
+
+  .offer__item,
+  .offer__item:nth-child(2), .offer__item:nth-child(3), .offer__item:nth-child(odd):nth-child(n+3) {
+    padding: 50px $padding-side-mobile 46px;
+  }
+
+  .offer__title {
+    font-size: 2.8rem;
+  }
+
+  .offer__text {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 400px) {
+  .section {
+    margin-top: 80px;
+  }
+
   .form-btn {
     font-size: 2rem;
   }
