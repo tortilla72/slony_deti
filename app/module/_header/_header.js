@@ -78,8 +78,9 @@ $('.burger-btn').on('click', function () {
 });
 
 // Скрываем кнопку корзины если она пустая
-let cartNum = parseInt($('.user-menu__btn--cart > span.user-menu__btn-num').text());
 let btnNum = $('.user-menu__btn--cart');
+let numContainer=btnNum.find('span.user-menu__btn-num');
+let cartNum = parseInt(numContainer.html());
 if (cartNum > 0) {
   btnNum.show();
 } else {

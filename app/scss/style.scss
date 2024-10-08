@@ -115,6 +115,42 @@
   line-height: 1.333;
 }
 
+.advantage__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  list-style: none;
+}
+
+.advantage__item {
+  position: relative;
+  flex-basis: 266px;
+  height: 335px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.advantage__img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: $radius;
+}
+
+.advantage__text {
+  margin: 0;
+  padding: 24px 20px;
+  font-weight: 400;
+}
+
 /** index.scss **/
 
 body._pc {

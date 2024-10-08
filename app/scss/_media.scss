@@ -21,6 +21,14 @@
   .offer__item:nth-child(odd):nth-child(n + 3) {
     padding: 40px 50px 37px;
   }
+
+  .advantage__list {
+    flex-wrap: wrap;
+  }
+
+  .advantage__item {
+    flex-basis: 48%;
+  }
 }
 
 @media (max-width: 864px) {
@@ -49,6 +57,10 @@
   .offer__item:nth-child(odd):nth-child(n + 3) {
     padding: 50px 50px 46px;
     text-align: left;
+  }
+
+  .advantage__item {
+    flex-basis: 46%;
   }
 }
 
@@ -90,6 +102,10 @@
 
   .offer__text {
     font-size: 2rem;
+  }
+
+  .advantage__item {
+    flex-basis: 100%;
   }
 }
 

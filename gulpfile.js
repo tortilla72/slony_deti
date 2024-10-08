@@ -3,6 +3,8 @@ const { src, dest, watch, parallel, series } = require('gulp');
 const browserSync = require('browser-sync').create();
 
 const nunjucksRender = require('gulp-nunjucks-render');
+const removeEmptyLines = require('gulp-remove-empty-lines');
+const htmlbeautify = require('gulp-html-beautify');
 
 const scss = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
@@ -10,9 +12,12 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
 const removeComments = require('gulp-strip-css-comments');
+
+
 const rename = require('gulp-rename');
 
 const rigger = require('gulp-rigger');
+const strip = require('gulp-strip-comments');
 const uglify = require('gulp-uglify-es').default;
 
 const newer = require('gulp-newer');
@@ -26,24 +31,16 @@ const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const clean = require('gulp-clean');
 
-function nunjucksModule() {
-  return src('app/module/**/*.njk')
-    .pipe(nunjucksRender())
-    .pipe(
-      dest(function (file) {
-        return file.base;
-      })
-    )
-    .pipe(browserSync.stream());
-}
-
 function nunjucks() {
-  return src('app/njk/*.njk')
-    .pipe(nunjucksRender())
-    .pipe(dest('app'))
-    .pipe(browserSync.stream());
+  return (
+    src('app/njk/*.njk')
+      .pipe(nunjucksRender())
+      .pipe(htmlbeautify({ 'indent_with_tabs': false }))
+      .pipe(removeEmptyLines())
+      .pipe(dest('app'))
+      .pipe(browserSync.stream())
+  );
 }
-
 
 function styles() {
   return src(['app/scss/*.scss'])
@@ -73,18 +70,18 @@ function styles() {
 }
 
 function scripts() {
-  return (
-    src(['app/js/*.js', '!app/js/*.min.js'])
-      .pipe(rigger())
-      .pipe(
-        rename({
-          suffix: '.min',
-          extname: '.js',
-        })
-      )
-      .pipe(dest('app/js'))
-      .pipe(browserSync.stream())
-  );
+  return src(['app/js/*.js', '!app/js/*.min.js'])
+    .pipe(rigger())
+    .pipe(
+      rename({
+        suffix: '.min',
+        extname: '.js',
+      })
+    )
+    .pipe(strip())
+    .pipe(uglify())
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream());
 }
 
 function images() {
