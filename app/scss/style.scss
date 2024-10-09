@@ -5,6 +5,7 @@
 
 @import '../module/_header/_header';
 @import '../module/_breadcrumbs/_breadcrumbs';
+@import '../module/_contact-form/_contact-form';
 @import '../module/_footer/_footer';
 
 /** index.scss **/
@@ -30,9 +31,6 @@
   line-height: 1.22917;
 }
 
-.preview__box-img {
-}
-
 .preview__img {
   width: 100%;
   border-radius: $radius;
@@ -45,16 +43,12 @@
   line-height: 1.333;
 }
 
-.form-btn-wrapper {
-  display: flex;
-  align-items: center;
+.preview__form-btn-wrapper {
   gap: 21px;
 }
 
-.form-btn-wrapper__text {
+.preview__btn__text {
   max-width: 230px;
-  line-height: 1.4rem;
-  color: $text-copy;
 }
 
 .offer-list {
@@ -115,7 +109,11 @@
   line-height: 1.333;
 }
 
-.advantage__list {
+.info {
+  margin-bottom: 100px;
+}
+
+.info__list {
   margin: 0;
   padding: 0;
   display: flex;
@@ -124,7 +122,7 @@
   list-style: none;
 }
 
-.advantage__item {
+.info__item {
   position: relative;
   flex-basis: 266px;
   height: 335px;
@@ -132,7 +130,7 @@
   align-items: flex-end;
 }
 
-.advantage__img {
+.info__img {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -145,7 +143,7 @@
   border-radius: $radius;
 }
 
-.advantage__text {
+.info__text {
   margin: 0;
   padding: 24px 20px;
   font-weight: 400;

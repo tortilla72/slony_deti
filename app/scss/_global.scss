@@ -76,9 +76,13 @@ body {
 .title {
   margin: 0 0 25px 0;
   font-family: 'Comfortaa', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 4.8rem;
   line-height: 1.125;
+}
+
+.page-title {
+  font-weight: 600;
 }
 
 .burger-btn {
@@ -177,10 +181,29 @@ body {
   }
 }
 
+.form-btn-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.form-btn-wrapper__text {
+  max-width: 165px;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: $text-copy;
+
+  a {
+    color: inherit;
+  }
+}
+
+
 .form-btn {
   position: relative;
   padding: 0;
   height: 70px;
+  display: block;
   font-family: 'DMSans', sans-serif;
   font-weight: 400;
   font-size: 2.4rem;
@@ -193,7 +216,8 @@ body {
 }
 
 .form-btn__text {
-  padding: 0 99px 0 30px;
+  padding: 0 105px 0 35px;
+  text-align: center;
 }
 
 .form-btn__icon {

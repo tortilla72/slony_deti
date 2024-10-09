@@ -14,8 +14,8 @@
 						<p class="preview__text">
 							Изучайте русский язык в самой удобном вам формате: в группах или индивидуально.<br> Первое занятие бесплатно
 						</p>
-						<div class="form-btn-wrapper">
-							<button class="form-btn">
+						<div class="form-btn-wrapper preview__form-btn-wrapper">
+							<button class="form-btn" type="button">
 								<span class="form-btn__text">
 								Записаться
 								</span>
@@ -74,55 +74,65 @@
 					</li>
 			</ul>
 		</section><!-- /offer -->
-		<section class="section advantage"> <!-- advantage -->
+		<section class="section info"> <!-- info -->
 			<div class="container">
 				<h2 class="title">
 					Как это работает
 				</h2>
-				<ul class="advantage__list">
-					<li class="advantage__item">
+				<ul class="info__list">
+					<li class="info__item">
 						<picture>
-							<source srcset="images/advantages/advantage1.avif" type="image/avif">
-              <source srcset="images/advantages/advantage1.webp" type="image/webp">
-							<img class="advantage__img" src="images/advantages/advantage1.jpg" alt="">
+							<source srcset="images/info/info1.avif" type="image/avif">
+              <source srcset="images/info/info1.webp" type="image/webp">
+							<img class="info__img" src="images/info/info1.jpg" alt="">
 						</picture>
-						<p class="advantage__text">
+						<p class="info__text">
 							Уроки в мини-группах по 7 человек, что позволит уделять достаточно внимания каждому ребёнку
 						</p>
 					</li>
-					<li class="advantage__item">
+					<li class="info__item">
 						<picture>
-							<source srcset="images/advantages/advantage1.avif" type="image/avif">
-              <source srcset="images/advantages/advantage1.webp" type="image/webp">
-							<img class="advantage__img" src="images/advantages/advantage1.jpg" alt="">
+							<source srcset="images/info/info1.avif" type="image/avif">
+              <source srcset="images/info/info1.webp" type="image/webp">
+							<img class="info__img" src="images/info/info1.jpg" alt="">
 						</picture>
-						<p class="advantage__text">
+						<p class="info__text">
 							Баланс между интерактивными упражнениями и живым диалогом
 						</p>
 					</li>
-					<li class="advantage__item">
+					<li class="info__item">
 						<picture>
-							<source srcset="images/advantages/advantage1.avif" type="image/avif">
-              <source srcset="images/advantages/advantage1.webp" type="image/webp">
-							<img class="advantage__img" src="images/advantages/advantage1.jpg" alt="">
+							<source srcset="images/info/info1.avif" type="image/avif">
+              <source srcset="images/info/info1.webp" type="image/webp">
+							<img class="info__img" src="images/info/info1.jpg" alt="">
 						</picture>
-						<p class="advantage__text">
+						<p class="info__text">
 							Много общения между детьми и работа с мотивацией каждого ученика
 						</p>
 					</li>
-					<li class="advantage__item">
+					<li class="info__item">
 						<picture>
-							<source srcset="images/advantages/advantage1.avif" type="image/avif">
-              <source srcset="images/advantages/advantage1.webp" type="image/webp">
-							<img class="advantage__img" src="images/advantages/advantage1.jpg" alt="">
+							<source srcset="images/info/info1.avif" type="image/avif">
+              <source srcset="images/info/info1.webp" type="image/webp">
+							<img class="info__img" src="images/info/info1.jpg" alt="">
 						</picture>
-						<p class="advantage__text">
+						<p class="info__text">
 							Работа по программам, которые адаптированы для детей, живущих в другой языковой среде
 						</p>
 					</li>
 				</ul>
 			</div>
-		</section><!-- /advantage -->
+		</section><!-- /info -->
+
+		{% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+		{{ contact_form(
+			"form-trial",
+			"",
+			"form-trial",
+			"Приходите на пробное занятие",
+			"Вместе с вами и вашим ребёнком разработаем стратегию обучения и подберём подходящую программу")
+		}}
+
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

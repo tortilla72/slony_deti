@@ -3,6 +3,24 @@
     padding-top: 140px;
   }
 
+  input.contact-form__input {
+    width: 320px;
+  }
+
+  .form-btn-wrapper {
+    flex-wrap: wrap;
+  }
+  .form-btn-wrapper__text {
+    max-width: 269px;
+  }
+
+  .preview__form-btn-wrapper {
+    flex-wrap: nowrap;
+  }
+  .preview__btn__text {
+    max-width: 230px;
+  }
+
   .preview__inner {
     gap: $gap-mobile;
   }
@@ -22,16 +40,40 @@
     padding: 40px 50px 37px;
   }
 
-  .advantage__list {
+  .info__list {
     flex-wrap: wrap;
   }
 
-  .advantage__item {
+  .info__item {
     flex-basis: 48%;
   }
 }
 
 @media (max-width: 864px) {
+  .contact-form__inner {
+    display: block;
+  }
+
+  .contact-form__info {
+    margin-bottom: 40px;
+  }
+
+  input.contact-form__input {
+    width: 100%;
+  }
+
+  .form-btn-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .form-btn-wrapper__text {
+    max-width: 165px;
+  }
+
+  .preview__btn__text {
+    max-width: 230px;
+  }
+
   .preview__inner {
     flex-direction: column;
   }
@@ -59,13 +101,13 @@
     text-align: left;
   }
 
-  .advantage__item {
+  .info__item {
     flex-basis: 46%;
   }
 }
 
 @media (max-width: 700px) {
-  .form-btn-wrapper {
+  .preview__form-btn-wrapper {
     flex-wrap: wrap;
   }
   .form-btn-wrapper__text {
@@ -80,14 +122,15 @@
 
   .page-title,
   .title {
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .preview__content {
     padding: 80px $padding-side-mobile;
   }
 
-  .preview__text {
+  .preview__text,
+  .offer__text {
     font-size: $font-card-small;
   }
 
@@ -100,11 +143,7 @@
     font-size: 2.8rem;
   }
 
-  .offer__text {
-    font-size: 2rem;
-  }
-
-  .advantage__item {
+  .info__item {
     flex-basis: 100%;
   }
 }
@@ -112,6 +151,10 @@
 @media (max-width: 400px) {
   .section {
     margin-top: 80px;
+  }
+
+  .info {
+    margin-bottom: 80px;
   }
 
   .form-btn {

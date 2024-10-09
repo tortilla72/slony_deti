@@ -1,0 +1,33 @@
+{% macro contact_form(id, add_style, name, form_title, form_text) %}
+
+  <div class="container">
+    <form class="contact-form {{ add_style }}" name={{ name }} id={{ id }} method="POST">
+      <div class="contact-form__inner">
+        <div class="contact-form__info">
+          <h2 class="title contact-form__title">
+            {{ form_title }}
+          </h2>
+          <p class="contact-form__text">
+            {{ form_text }}
+          </p>
+        </div>
+        <div class="contact-form__box">
+          <input class="contact-form__input" type="text" placeholder="Ваше имя" required>
+          <input class="contact-form__input" type="tel" placeholder="Номер телефона">
+          <input class="contact-form__input" type="email" placeholder="Электронная почта" required>
+          <div class="form-btn-wrapper">
+					  <button class="form-btn" type="submit">
+						  <span class="form-btn__text">
+								  Записаться
+						  </span>
+						  <span class="form-btn__icon"></span>
+					  </button>
+					  <span class="form-btn-wrapper__text">
+								Нажимая на кнопку, вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>
+					  </span>
+			    </div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endmacro %}
