@@ -85,6 +85,13 @@ body {
   font-weight: 600;
 }
 
+.box-text {
+  margin: 0;
+  font-weight: 500;
+  font-size: $font-box;
+  line-height: 1.333;
+}
+
 .burger-btn {
   position: relative;
   width: 29px;
@@ -241,6 +248,20 @@ body {
   background-image: url('../images/sprite.svg#arrow-right-icon');
 }
 
+.box-link {
+  display: block;
+  padding: 15px 46px 16px;
+  min-width: 270px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid $text;
+  border-radius: $radius;
+  box-shadow: $search_shadow;
+  transition: $transition-btn;
+}
+
 body._pc {
   .nav-btn:hover {
     background-color: transparent;
@@ -251,6 +272,10 @@ body._pc {
     .form-btn__icon::after {
       animation: arrow-right 1.5s linear infinite;
     }
+  }
+
+  .box-link:hover {
+    background-color: $menu-hover;
   }
 }
 

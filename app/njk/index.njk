@@ -11,7 +11,7 @@
 						<h1 class="page-title preview__title">
 							Онлайн-школа<br>Слоны и Дети
 						</h1>
-						<p class="preview__text">
+						<p class="box-text preview__text">
 							Изучайте русский язык в самой удобном вам формате: в группах или индивидуально.<br> Первое занятие бесплатно
 						</p>
 						<div class="form-btn-wrapper preview__form-btn-wrapper">
@@ -46,7 +46,7 @@
 						<h3 class="offer__title">
 							Все наши курсы и материалы
 						</h3>
-						<p class="offer__text">
+						<p class="box-text offer__text">
 							Курсы и материалы для детей и  родителей
 						</p>
 						<a class="offer__link" href="#">
@@ -123,7 +123,6 @@
 				</ul>
 			</div>
 		</section><!-- /info -->
-
 		{% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
 		{{ contact_form(
 			"form-trial",
@@ -132,7 +131,30 @@
 			"Приходите на пробное занятие",
 			"Вместе с вами и вашим ребёнком разработаем стратегию обучения и подберём подходящую программу")
 		}}
-
+	<section class="section home-about"> <!-- home-about -->
+		<div class="container">
+			<div class="home-about__inner">
+				<div class="home-about__content">
+					<h2 class="title home-about__title">
+						Что такое<br>Слоны и Дети
+					</h2>
+					<p class="box-text home-about__text">
+						Lorem ipsum dolor sit amet consectetur. Lobortis morbi maecenas mauris mi sapien quis dictumst. Egestas quis consectetur tellus ipsum mattis. Et pellentesque duis libero vitae risus id augue tellus. Odio diam aliquam ut mattis elementum. Congue dignissim eget et aenean. Odio convallis vitae.
+					</p>
+					<a class="box-link home-about__link" href="#">
+						Узнать больше
+					</a>
+				</div>
+			<div class="home-about__box-img">
+				<picture>
+						<source srcset="images/preview-img.avif" type="image/avif">
+            <source srcset="images/preview-img.webp" type="image/webp">
+						<img class="home-about__img" src="images/preview-img.jpg" alt="">
+				</picture>
+			</div>
+		</div>
+		</div>
+	</section> <!-- /home-about -->
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>
