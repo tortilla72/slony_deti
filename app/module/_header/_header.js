@@ -28,10 +28,6 @@ $(window).on('scroll', function () {
   scrollPrev = scrolled;
 });
 
-// Деактивируем кнопку для выпадающего меню в случае бургер-меню
-if (window.matchMedia('(max-width: 700px)')) {
-  $('.menu__btn').prop('disabled', true);
-}
 
 // Появление/скрытие формы поиска при клике на кнопку
 $('.user-menu__form-btn').on('click', function () {
@@ -53,8 +49,18 @@ let waitForFinalEvent = (function () {
   };
 })();
 
-// Изменение в форме поиска header типа кнопки и скрытой надписи на ней при изменении размеров экрана
+// Деактивируем кнопку для выпадающего меню в случае бургер-меню и изменение в форме поиска header типа кнопки и скрытой надписи на ней при изменении размеров экрана
+
 $(window).on('resize', function () {
+  waitForFinalEvent(
+    function () {
+      if (window.innerWidth <= 700) {
+        $('.menu__btn').prop('disabled', true);
+      }
+    },
+    500,
+    'menu__btn'
+  );
   waitForFinalEvent(
     function () {
       if (window.innerWidth <= 568) {

@@ -1,3 +1,10 @@
+@media (max-width: 1200px) {
+  .tarif__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 1024px) {
   .main {
     padding-top: 140px;
@@ -52,6 +59,10 @@
   .home-about__content {
    padding-left: $padding-side-mobile;
    padding-right: $padding-side-mobile;
+  }
+
+  .tarif__list {
+
   }
 }
 
@@ -189,5 +200,22 @@
     padding-right: 0;
     text-align: center;
     font-size: $font-box-small;
+  }
+
+  .tarif__list {
+    display: block;
+  }
+
+  .tarif__item {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .tarif__item + .tarif__item {
+    margin-top: 40px;
+  }
+  .tarif__box-img {
+    width: 100%;
   }
 }
