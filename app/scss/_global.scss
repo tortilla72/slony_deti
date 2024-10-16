@@ -16,7 +16,8 @@ body {
 
 a:focus,
 button:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: $outline;
 }
 
@@ -32,7 +33,6 @@ body {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.1875;
-  letter-spacing: 0;
   color: $text;
   background-color: $bg;
 }
@@ -53,6 +53,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.fancybox-slide--html {
+  padding: 6px 20px;
 }
 
 .visually-hidden {
@@ -206,7 +210,6 @@ body {
   }
 }
 
-
 .form-btn {
   position: relative;
   padding: 0;
@@ -269,6 +272,41 @@ body {
   }
 }
 
+.popup-close-btn {
+  position: absolute;
+  padding: 0;
+  width: 64px;
+  height: 64px;
+  top: 44px;
+  right: 44px;
+  background-color: $bg-popup-close;
+  border: none;
+  border-radius: 50%;
+  transition: $transition-btn;
+  cursor: pointer;
+
+  &:focus {
+    background-color: $accent-dark;
+    outline: $outline-none;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    top:16px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
+    background-image: url('../images/sprite.svg#popup-close-icon');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+
+
+
 body._pc {
   .nav-btn:hover {
     background-color: transparent;
@@ -283,6 +321,10 @@ body._pc {
 
   .box-link:hover {
     background-color: $menu-hover;
+  }
+
+  .popup-close-btn:hover {
+    background-color: $accent-dark;
   }
 }
 
@@ -300,3 +342,4 @@ body._pc {
     left: 10px;
   }
 }
+

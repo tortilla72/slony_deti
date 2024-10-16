@@ -5,6 +5,28 @@
   }
 }
 
+@media (max-width: 1120px) {
+  .reviews__form-bottom {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  .reviews__form-btn-wrapper {
+    margin: 20px 0 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .reviews__form-btn {
+    width: 280px;
+  }
+
+  .reviews__form-btn-wrapper-text {
+    margin: 0;
+    margin-left: 20px;
+    text-align: left;
+  }
+}
+
 @media (max-width: 1024px) {
   .main {
     padding-top: 140px;
@@ -129,6 +151,23 @@
   .info__item {
     flex-basis: 46%;
   }
+
+  .reviews__popup-text {
+    max-width: 400px;
+  }
+
+  input.reviews__form-input{
+    min-width: 100%;
+  }
+
+  .reviews__form-input + .reviews__form-input {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .reviews__form-btn {
+    width: auto;
+  }
 }
 
 @media (max-width: 700px) {
@@ -137,6 +176,13 @@
   }
   .form-btn-wrapper__text {
     max-width: none;
+  }
+  .reviews__form-btn-wrapper {
+    flex-wrap: wrap;
+  }
+  .reviews__form-btn-wrapper-text {
+    margin: 0;
+    margin-top: 20px;
   }
 }
 
@@ -152,6 +198,20 @@
 
   .box-text {
     font-size: $font-box-small;
+  }
+
+  .popup-close-btn {
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+    &::before {
+      top: 13px;
+      left: 13px;
+      width: 24px;
+      height: 24px;
+    }
   }
 
   .preview__content {
@@ -175,6 +235,38 @@
     padding-left: $padding-side-mobile;
     padding-right: $padding-side-mobile;
   }
+
+  .reviews__author {
+    font-size: 2.8rem;
+  }
+
+  .reviews__blockquote {
+    font-size: 1.6rem;
+  }
+
+  .reviews__popup {
+    padding: 30px;
+  }
+
+  .reviews__popup-text {
+    margin: 20px 0 30px;
+  }
+
+  .reviews__form-textarea {
+    padding: 20px;
+    font-size: 1.6rem;
+   border-radius: 10px;
+  }
+
+  .reviews__form-btn {
+    padding: 20px;
+    width: 100%;
+    font-size: $font-box-small;
+  }
+  .reviews__form-btn-wrapper-text {
+    max-width: none;
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -192,6 +284,10 @@
 
   .form-btn__text {
     padding: 0 90px 0 20px;
+  }
+
+  .box-text {
+    font-size: 1.6rem;
   }
 
   .box-link {
@@ -217,5 +313,9 @@
   }
   .tarif__box-img {
     width: 100%;
+  }
+
+  .tarif__text {
+    font-size: 1.6rem;
   }
 }

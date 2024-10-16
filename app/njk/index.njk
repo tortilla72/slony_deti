@@ -236,7 +236,7 @@
 							</picture>
 						</div>
 						<p class="tarif__text">
-							Lorem ipsum dolor sit amet consectetur. Pellentesque sit urna risus amet amet id ac pulvinar pellentesque. Purus.
+							Lorem ipsum dolor sit amet consectetur. Pellentesque sit urna risus amet amet id ac pulvinar pellentesque. Purus. Lorem ipsum dolor sit amet consectetur. Pellentesque sit urna risus amet amet id ac pulvinar pellentesque. Purus.
 						</p>
 						<ul class="tarif__privilege-list">
 							<li class="tarif__privilege-item">
@@ -260,6 +260,64 @@
 			</ul>
 		</div>
 	</section><!-- /tarif -->
+	<section class="section reviews"> <!-- reviews -->
+		<div class="container">
+			<h2 class="title">
+				Отзывы
+			</h2>
+			<div class="reviews__slider-box">
+				<div class="swiper reviews__slider">
+  				<!-- Additional required wrapper -->
+  				<div class="swiper-wrapper reviews__slider-wrapper">
+    				<!-- Slides -->
+    				<div class="swiper-slide reviews__slide">
+							<span class="reviews__author">Имя 1</span>
+							<blockquote class="reviews__blockquote">
+								Lorem ipsum dolor sit amet consectetur. Arcu non in in egestas cursus et. Hendrerit eu cras sed eget pellentesque non. Cras aliquam egestas odio orci tincidunt non diam. Non justo fringilla turpis semper. Donec est nunc arcu arcu. Enim duis morbi in enim ut volutpat nulla. Id praesent sit purus velit eget metus quis non. Urna ante magna urna libero.
+							</blockquote>
+						</div>
+    				<div class="swiper-slide reviews__slide">
+							<span class="reviews__author">Имя 2</span>
+							<blockquote class="reviews__blockquote">
+								Lorem ipsum dolor sit amet consectetur. Arcu non in in egestas cursus et. Hendrerit eu cras sed eget pellentesque non. Cras aliquam egestas odio orci tincidunt non diam. Non justo fringilla turpis semper. Donec est nunc arcu arcu. Enim duis morbi in enim ut volutpat nulla. Id praesent sit purus velit eget metus quis non. Urna ante magna urna libero. Lorem ipsum dolor sit amet consectetur. Arcu non in in egestas cursus et. Hendrerit eu cras sed eget pellentesque non. Cras aliquam egestas odio orci tincidunt non diam. Non justo fringilla turpis semper. Donec est nunc arcu arcu. Enim duis morbi in enim ut volutpat nulla.
+							</blockquote>
+						</div>
+    				<div class="swiper-slide reviews__slide">
+							<span class="reviews__author">Имя 3</span>
+							<blockquote class="reviews__blockquote">
+								Lorem ipsum dolor sit amet consectetur. Arcu non in in egestas cursus et. Hendrerit eu cras sed
+							</blockquote>
+						</div>
+  				</div>
+				</div>
+				<button class="swiper-button-prev reviews__btn-prev"></button>
+  			<button class="swiper-button-next reviews__btn-next"></button>
+			</div>
+			<div class="reviews__btn-wrapper">
+				<a class="reviews__btn" href="#reviews__popup" data-fancybox>Оставить отзыв</a>
+			</div>
+			<div class="reviews__popup" id="reviews__popup">
+				<h2 class="title reviews__popup-title">Отзыв</h2>
+				<p class="reviews__popup-text">
+					Напишите свой отзыв о нашей работе и он навсегда останется на нашем сайте
+				</p>
+				<form class="reviews__form" name="reviews__form" id="reviews__form" method="POST">
+					<textarea class="reviews__form-textarea" name="review" rows="12" placeholder="Ваш отзыв"></textarea>
+					<div class="reviews__form-bottom">
+						<input class="contact-form__input reviews__form-input reviews__form-input--name" type="text" name="Name" placeholder="Ваше имя">
+						<input class="contact-form__input reviews__form-input reviews__form-input--email" type="tel" name="email" placeholder="Электронная почта">
+						<div class="reviews__form-btn-wrapper">
+							<button class="reviews__form-btn" type="submit">Отправить</button>
+							<p class="reviews__form-btn-wrapper-text">
+								Нажимая на кнопку,<br>вы соглашаетесь с нашей
+								<a class="reviews__link" href="#" target="_blank">политикой конфиденциальности</a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section><!-- /reviews -->
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

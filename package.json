@@ -36,7 +36,10 @@
     "sass": "^1.58.3"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "animate.css": "^4.1.1",
     "jquery": "^3.7.1",
-    "locomotive-scroll": "^4.1.4"
+    "locomotive-scroll": "^4.1.4",
+    "swiper": "^11.1.14"
   }
 }

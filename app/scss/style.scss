@@ -8,7 +8,7 @@
 @import '../module/_contact-form/_contact-form';
 @import '../module/_footer/_footer';
 
-/** index.scss **/
+/*********** index.scss **********/
 .preview {
   padding-top: 50px;
 }
@@ -96,8 +96,6 @@
   left: 0;
   right: 0;
   border-radius: $radius;
-
-
 }
 
 .offer__title {
@@ -166,7 +164,6 @@
   line-height: 1.16;
 }
 
-
 .tarif__list {
   padding: 0;
   display: flex;
@@ -174,7 +171,6 @@
   gap: 40px;
   list-style: none;
 }
-
 
 .tarif__item {
   padding: 27px 32px 30px 31px;
@@ -186,7 +182,6 @@
   border-radius: $radius;
   z-index: 1;
 }
-
 
 .tarif__title {
   margin: 0 auto 23px 0;
@@ -300,7 +295,196 @@
   }
 }
 
-/** index.scss **/
+.reviews__slider-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.reviews__slider-wrapper {
+  align-items: stretch;
+}
+
+.reviews__slide {
+  box-sizing: border-box;
+  padding: 40px;
+  width: fit-content;
+  height: auto;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+
+.reviews__author {
+  margin-bottom: 31px;
+  display: block;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1.125;
+}
+
+.reviews__blockquote {
+  margin: 0;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+.reviews__btn-prev,
+.reviews__btn-next {
+  position: absolute;
+  top: -68px;
+  padding: 0;
+  width: 43px;
+  height: 43px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  transition: $transition-btn;
+  cursor: pointer;
+  z-index: 2;
+
+  &.swiper-button-disabled {
+    opacity: 0.3;
+  }
+}
+
+.reviews__btn-prev {
+  right: 74px;
+  background-image: url('../images/sprite.svg#prev-icon');
+}
+
+.reviews__btn-next {
+  right: 0;
+  background-image: url('../images/sprite.svg#next-icon');
+}
+
+.reviews__btn-wrapper {
+  text-align: center;
+}
+
+.reviews__btn {
+  padding: 20px 36px 20px 34px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.167;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid $text;
+  border-radius: 10px;
+  transition: $transition-btn;
+  outline: $outline-none;
+  caret-color: transparent;
+
+  &:focus {
+    color: $text-light;
+    background-color: $bg-cart;
+  }
+}
+
+/* reviews__popup */
+.reviews__popup {
+  width: 1160px;
+  padding: 60px 60px 36px;
+  display: none;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+
+.reviews__popup.fancybox-content {
+    cursor: default;
+  }
+.reviews__popup-title {
+  margin-bottom: 9px;
+}
+
+.reviews__popup-text {
+  margin: 0 0 42px;
+  max-width: 782px;
+}
+
+.reviews__form {
+  font-family: 'DMSans', sans-serif;
+  font-size: $font-box;
+  line-height: 1.292;
+}
+
+.reviews__form-textarea {
+  margin-bottom: 20px;
+  padding: 35px 33px;
+  width: 100%;
+  vertical-align: top;
+  height: 403px;
+  border: 1px solid $text;
+  border-radius: $radius;
+  resize: none;
+
+  &::placeholder {
+    color: $bg-dark;
+  }
+}
+
+input.reviews__form-input {
+  border: 1px solid $text;
+}
+
+.reviews__form-input + .reviews__form-input {
+  margin-left: 20px;
+}
+
+.reviews__form-input--name {
+  max-width: 280px;
+}
+.reviews__form-input--email {
+  max-width: 350px;
+}
+
+.reviews__form-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews__form-btn-wrapper {
+  margin-left: auto;
+  text-align: right;
+}
+
+.reviews__form-btn {
+  padding: 20px 74px 20px;
+  color: $text;
+  border: 1px solid $text;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: $transition-btn;
+  outline: $outline-none;
+
+  &:focus {
+    color: $text-light;
+    background-color: $bg-cart;
+  }
+}
+
+.reviews__form-btn-wrapper-text {
+  margin: 20px 0 0;
+  max-width: 269px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 0.875;
+  color: $text-copy;
+}
+
+.reviews__form-btn-wrapper .reviews__link {
+  display: block;
+  color: inherit;
+  transition: $transition-btn;
+}
+
+/* /reviews__popup */
+
+/*********** /index.scss **********/
 
 body._pc {
   .offer__item:hover {
@@ -311,6 +495,28 @@ body._pc {
   .tarif__btn:hover {
     background-color: transparent;
     color: $text-light;
+  }
+
+  .reviews__btn-prev:hover:not(.swiper-button-disabled) {
+    background-image: url('../images/sprite.svg#prev-icon-hover');
+  }
+
+  .reviews__btn-next:hover:not(.swiper-button-disabled) {
+    background-image: url('../images/sprite.svg#next-icon-hover');
+  }
+
+  .reviews__btn:hover,
+  .reviews__form-btn:hover {
+    color: $text-light;
+    background-color: $accent-dark;
+  }
+
+  .reviews__form-btn-wrapper .reviews__link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
