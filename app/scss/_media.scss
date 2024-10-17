@@ -82,10 +82,6 @@
    padding-left: $padding-side-mobile;
    padding-right: $padding-side-mobile;
   }
-
-  .tarif__list {
-
-  }
 }
 
 @media (max-width: 864px) {
@@ -167,6 +163,10 @@
 
   .reviews__form-btn {
     width: auto;
+  }
+
+  .reviews__thanks-img {
+    margin: 0;
   }
 }
 

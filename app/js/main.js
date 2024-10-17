@@ -15,18 +15,20 @@ const isMobile = {
     return navigator.userAgent.match(/IEMobile/i);
   },
   any: function () {
-    return isMobile.Android() ||
-    isMobile.BlackBerry() ||
-    isMobile.iOS() ||
-    isMobile.Opera() ||
-    isMobile.Windows();
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows()
+    );
   },
 };
 
-if (isMobile.any()){
+if (isMobile.any()) {
   document.body.classList.add('_touch');
-}else {
-   document.body.classList.add('_pc');
+} else {
+  document.body.classList.add('_pc');
 }
 
 //= ../../node_modules/jquery/dist/jquery.js
@@ -53,19 +55,49 @@ $(function () {
   });
 
   // Всплывающее окно для отзыва
-    $('.reviews__btn').fancybox({
-      type: 'inline',
-      btnTpl: {
+  $('.reviews__btn').fancybox({
+    type: 'inline',
+    closeExisting: true,
+    btnTpl: {
       smallBtn:
         '<button class="popup-close-btn" data-fancybox-close><span class="visually-hidden">Закрыть.</span></button>',
-      },
-      afterLoad: function () {
-        $('.reviews__popup').addClass('animate__animated fadeInDown');
-      },
-      beforeClose: function () {
-        $('.reviews__popup').addClass('animate__animated fadeOutDown');
+    },
+    afterLoad: function () {
+      $('.reviews__popup').addClass('animate__animated fadeInDown');
+    },
+    beforeClose: function () {
+      $('.reviews__popup').addClass('animate__animated fadeOutDown');
+    },
+  });
+
+  // Проверка удачной отправки формы отзыва
+  $('.reviews__form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: this.action,
+      type: this.method,
+      data: $(this).serialize(),
+      success: function () {
+        setTimeout(() => {
+          $.fancybox.getInstance('close');
+          $.fancybox.open({
+            src: '#reviews__thanks',
+            type: 'inline',
+            btnTpl: {
+              smallBtn:
+                '<button class="popup-close-btn" data-fancybox-close><span class="visually-hidden">Закрыть.</span></button>',
+            },
+            afterLoad: function () {
+              $('.reviews__popup').addClass('animate__animated fadeInDown');
+            },
+            beforeClose: function () {
+              $('.reviews__popup').addClass('animate__animated fadeOutDown');
+            },
+          });
+        }, 100);
       },
     });
+  });
 
   //= ../module/_header/_header.js
 

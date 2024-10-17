@@ -428,6 +428,12 @@
 
 input.reviews__form-input {
   border: 1px solid $text;
+
+  &:disabled {
+   opacity: 0.3;
+    caret-color: transparent;
+  }
+
 }
 
 .reviews__form-input + .reviews__form-input {
@@ -483,6 +489,19 @@ input.reviews__form-input {
 }
 
 /* /reviews__popup */
+
+/* reviews__thanks */
+.reviews__thanks {
+  display: none;
+}
+
+.reviews__thanks-img {
+  margin: 0 21.7% 0 auto;
+  width: 150px;
+  height: auto;
+  display: block;
+}
+/* /reviews__thanks */
 
 /*********** /index.scss **********/
 

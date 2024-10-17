@@ -296,16 +296,17 @@
 			<div class="reviews__btn-wrapper">
 				<a class="reviews__btn" href="#reviews__popup" data-fancybox>Оставить отзыв</a>
 			</div>
+			<!-- reviews__popup -->
 			<div class="reviews__popup" id="reviews__popup">
 				<h2 class="title reviews__popup-title">Отзыв</h2>
-				<p class="reviews__popup-text">
+				<p class="reviews__popup-text reviews__popup-text--main">
 					Напишите свой отзыв о нашей работе и он навсегда останется на нашем сайте
 				</p>
-				<form class="reviews__form" name="reviews__form" id="reviews__form" method="POST">
-					<textarea class="reviews__form-textarea" name="review" rows="12" placeholder="Ваш отзыв"></textarea>
+				<form class="reviews__form" name="reviews__form" id="reviews__form" action="">
+					<textarea class="reviews__form-textarea" name="review" rows="12" placeholder="Ваш отзыв" required></textarea>
 					<div class="reviews__form-bottom">
-						<input class="contact-form__input reviews__form-input reviews__form-input--name" type="text" name="Name" placeholder="Ваше имя">
-						<input class="contact-form__input reviews__form-input reviews__form-input--email" type="tel" name="email" placeholder="Электронная почта">
+						<input class="contact-form__input reviews__form-input reviews__form-input--name" type="text" name="Name" placeholder="Ваше имя" required>
+						<input class="contact-form__input reviews__form-input reviews__form-input--email" type="email" name="email" placeholder="Электронная почта" required>
 						<div class="reviews__form-btn-wrapper">
 							<button class="reviews__form-btn" type="submit">Отправить</button>
 							<p class="reviews__form-btn-wrapper-text">
@@ -316,6 +317,20 @@
 					</div>
 				</form>
 			</div>
+			<!-- /reviews__popup -->
+			<!-- reviews__thanks -->
+				<div class="reviews__popup reviews__thanks" id="reviews__thanks">
+					<h2 class="title reviews__popup-title">Отзыв</h2>
+					<p class="reviews__popup-text">
+					Мы получили ваш отзыв. После модерации он появится на сайте, а мы отправим вам промокод
+					</p>
+						<picture>
+							<source srcset="images/rewies-thanks.avif" type="image/avif">
+                <source srcset="images/rewies-thanks.webp" type="image/webp">
+							<img class="reviews__thanks-img" src="images/rewies-thanks.png" alt="">
+						</picture>
+				</div>
+			<!-- /reviews__thanks -->
 		</div>
 	</section><!-- /reviews -->
 {% endblock %}
