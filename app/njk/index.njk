@@ -394,6 +394,15 @@
 			</div>
 		</div>
 	</section> <!-- /faq -->
+
+	{% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+	{{ contact_form(
+		"form-discount",
+		"",
+		"form-discount",
+		"А ещё…",
+		"Мы подарим вам скидку в 10% на занятия первого месяца или на оплату любого курса и материала")
+	}}
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

@@ -517,6 +517,7 @@ input.reviews__form-input {
 /*** /reviews ***/
 
 .faq {
+  margin-bottom: 100px;
   font-size: $font-box;
 }
 
@@ -574,7 +575,7 @@ input.reviews__form-input {
   overflow: hidden;
   transform-origin: 0 0;
   transform: scaleY(0);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .faq__tab-input {
@@ -589,7 +590,7 @@ input.reviews__form-input {
 
 .faq__tab-input:checked~.faq__tab-content {
   padding: 40px;
-  max-height: 2200px;
+  max-height: 2000px;
   transform: scaleY(100%);
 }
 /*********** /index.scss **********/
