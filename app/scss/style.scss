@@ -8,7 +8,7 @@
 @import '../module/_contact-form/_contact-form';
 @import '../module/_footer/_footer';
 
-/*********** index.scss **********/
+/*********** index **********/
 
 /*** preview ***/
 .preview {
@@ -39,7 +39,8 @@
 }
 
 .preview__img,
-.home-about__img {
+.home-about__img,
+.banner__img {
   width: 100%;
   border-radius: $radius;
 }
@@ -593,7 +594,46 @@ input.reviews__form-input {
   max-height: 2000px;
   transform: scaleY(100%);
 }
-/*********** /index.scss **********/
+/*********** /index **********/
+
+/*********** about **********/
+.banner {}
+.banner__inner {
+  display: grid;
+  grid-template-columns: 60.345% 37.93%;
+  gap: 20px;
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.statistics__item {
+  padding: 40px;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+.statistics__num {
+  font-family: 'DaysOne', sans-serif;
+  font-size: 6.4rem;
+  line-height: 1;
+  color: $bg-dark;
+}
+.statistics__text {
+  margin-top: -3px;
+  display: block;
+  font-weight: 400;
+  font-size: 3.2rem;
+}
+.banner__box-img {
+  display: flex;
+  align-items: center;
+  border-radius: $radius;
+}
+
+
+/*********** /about **********/
 
 body._pc {
   .offer__item:hover {
