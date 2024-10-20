@@ -9,6 +9,8 @@
 @import '../module/_footer/_footer';
 
 /*********** index.scss **********/
+
+/*** preview ***/
 .preview {
   padding-top: 50px;
 }
@@ -54,6 +56,9 @@
   max-width: 230px;
 }
 
+/*** /preview ***/
+
+/*** offer ***/
 .offer-list {
   margin: 0;
   padding: 0;
@@ -105,7 +110,9 @@
   font-size: 3.6rem;
   line-height: 1.111;
 }
+/*** /offer ***/
 
+/*** info ***/
 .info {
   margin-bottom: 100px;
 }
@@ -145,7 +152,9 @@
   padding: 24px 20px;
   font-weight: 400;
 }
+/*** /info ***/
 
+/*** home-about ***/
 .home-about__content {
   padding: 60px;
 }
@@ -163,7 +172,9 @@
   font-size: 2.5rem;
   line-height: 1.16;
 }
+/*** /home-about ***/
 
+/*** tarif ***/
 .tarif__list {
   padding: 0;
   display: flex;
@@ -294,7 +305,9 @@
     background: $headerbtn-gradient;
   }
 }
+/*** /tarif ***/
 
+/*** reviews ***/
 .reviews__slider-box {
   position: relative;
   margin-bottom: 25px;
@@ -394,8 +407,8 @@
 }
 
 .reviews__popup.fancybox-content {
-    cursor: default;
-  }
+  cursor: default;
+}
 .reviews__popup-title {
   margin-bottom: 9px;
 }
@@ -430,10 +443,9 @@ input.reviews__form-input {
   border: 1px solid $text;
 
   &:disabled {
-   opacity: 0.3;
+    opacity: 0.3;
     caret-color: transparent;
   }
-
 }
 
 .reviews__form-input + .reviews__form-input {
@@ -502,7 +514,84 @@ input.reviews__form-input {
   display: block;
 }
 /* /reviews__thanks */
+/*** /reviews ***/
 
+.faq {
+  font-size: $font-box;
+}
+
+.faq__tab {
+  background-color: $bg;
+  border: 1px solid $bg-dark;
+  border-radius: 10px;
+  box-shadow: $faq_shadow;
+}
+
+.faq__tab + .faq__tab {
+  margin-top: 20px;
+}
+
+.faq__tab-title {
+  position: relative;
+  padding: 22px 100px 22px 40px;
+  display: block;
+  background-color: $bg-light;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 42px;
+    height: 42px;
+    background-color: $bg;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    height: 10px;
+    width: 22px;
+    background-image: url('../images/sprite.svg#chevron-down');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: 50%;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+}
+
+.faq__tab-content {
+  margin: 0;
+  padding: 0 40px;
+  max-height: 0;
+  overflow: hidden;
+  transform-origin: 0 0;
+  transform: scaleY(0);
+  transition: all 0.5s ease;
+}
+
+.faq__tab-input {
+  &:checked+label::after {
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  &:focus + label {
+    outline: $outline;
+  }
+}
+
+.faq__tab-input:checked~.faq__tab-content {
+  padding: 40px;
+  max-height: 2200px;
+  transform: scaleY(100%);
+}
 /*********** /index.scss **********/
 
 body._pc {

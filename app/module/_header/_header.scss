@@ -93,7 +93,9 @@
     width: 12px;
     height: 8px;
     background-image: url('../images/sprite.svg#chevron-down');
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-position: center;
     transform-origin: center;
   }
 }
