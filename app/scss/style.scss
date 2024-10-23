@@ -310,7 +310,6 @@
 
 /*** reviews ***/
 .reviews__slider-box {
-  position: relative;
   margin-bottom: 25px;
 }
 
@@ -341,37 +340,6 @@
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.6;
-}
-
-.reviews__btn-prev,
-.reviews__btn-next {
-  position: absolute;
-  top: -68px;
-  padding: 0;
-  width: 43px;
-  height: 43px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  transition: $transition-btn;
-  cursor: pointer;
-  z-index: 2;
-
-  &.swiper-button-disabled {
-    opacity: 0.3;
-  }
-}
-
-.reviews__btn-prev {
-  right: 74px;
-  background-image: url('../images/sprite.svg#prev-icon');
-}
-
-.reviews__btn-next {
-  right: 0;
-  background-image: url('../images/sprite.svg#next-icon');
 }
 
 .reviews__btn-wrapper {
@@ -580,7 +548,7 @@ input.reviews__form-input {
 }
 
 .faq__tab-input {
-  &:checked+label::after {
+  &:checked + label::after {
     transform: rotate(180deg) translateY(50%);
   }
 
@@ -589,7 +557,7 @@ input.reviews__form-input {
   }
 }
 
-.faq__tab-input:checked~.faq__tab-content {
+.faq__tab-input:checked ~ .faq__tab-content {
   padding: 40px;
   max-height: 2000px;
   transform: scaleY(1);
@@ -706,6 +674,44 @@ input.reviews__form-input {
   }
 }
 
+.about-video__link {
+  position: relative;
+  height: 315px;
+  display: block;
+  border-radius: $radius;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    background-image: url('../images/sprite.svg#play-icon');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 134px 108px;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
+
+.about-video__img {
+  width: 100%;
+  height: 100%;
+  border-radius: $radius;
+  object-fit: cover;
+}
 
 /*********** /about **********/
 
@@ -720,14 +726,6 @@ body._pc {
     color: $text-light;
   }
 
-  .reviews__btn-prev:hover:not(.swiper-button-disabled) {
-    background-image: url('../images/sprite.svg#prev-icon-hover');
-  }
-
-  .reviews__btn-next:hover:not(.swiper-button-disabled) {
-    background-image: url('../images/sprite.svg#next-icon-hover');
-  }
-
   .reviews__btn:hover,
   .reviews__form-btn:hover {
     color: $text-light;
@@ -740,6 +738,10 @@ body._pc {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .about-video__link:hover:before {
+    opacity: 0.5;
   }
 }
 

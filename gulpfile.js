@@ -31,9 +31,6 @@ const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const clean = require('gulp-clean');
 
-const purgecss = require('gulp-purgecss');
-
-
 function nunjucks() {
   return (
     src('app/njk/*.njk')
@@ -156,16 +153,6 @@ function cleanDist() {
   return src('docs').pipe(clean());
 }
 
-function purgeCSS(){ // Удаляем неиспользованные стили
-    return src('app/css/style.min.css')
-      .pipe(
-        purgecss({
-          content: ['app/**/*.html'],
-        })
-      )
-      .pipe(dest('app/css'));
-}
-
 function building() {
   return src(
     [
@@ -188,7 +175,6 @@ function building() {
 exports.sprite = sprite;
 exports.nunjucks = nunjucks;
 exports.styles = styles;
-exports.purgeCSS = purgeCSS;
 exports.scripts = scripts;
 exports.images = images;
 exports.fonts = fonts;
@@ -196,4 +182,4 @@ exports.building = building;
 exports.watching = watching;
 
 exports.build = series(cleanDist, building);
-exports.default = parallel(nunjucks,styles, purgeCSS, images, fonts, scripts, watching);
+exports.default = parallel(nunjucks,styles, images, fonts, scripts, watching);

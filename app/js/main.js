@@ -49,8 +49,8 @@ $(function () {
       },
     },
     navigation: {
-      nextEl: '.reviews__btn-next',
-      prevEl: '.reviews__btn-prev',
+      nextEl: '.slider__btn-next',
+      prevEl: '.slider__btn-prev',
     },
   });
 
@@ -97,6 +97,21 @@ $(function () {
         }, 100);
       },
     });
+  });
+
+// Слайдер видео на странице about
+  const swiperAboutVideo = new Swiper('.about-video__slider', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    breakpoints: {
+      1025: {
+        slidesPerView: 2,
+      },
+    },
+    navigation: {
+      nextEl: '.slider__btn-next',
+      prevEl: '.slider__btn-prev',
+    },
   });
 
   //= ../module/_header/_header.js

@@ -28,13 +28,22 @@ $(window).on('scroll', function () {
   scrollPrev = scrolled;
 });
 
-
 // Появление/скрытие формы поиска при клике на кнопку
 $('.user-menu__form-btn').on('click', function () {
   $('.user-menu__form').toggleClass('user-menu__form--active');
   $('.user-menu__form-input').trigger('focus');
 });
 
+// Замена кнопки подменю на span
+/*if ($('.burger-btn').css('display')!='none') {
+  $('.menu__btn').replaceWith(
+    '<span class="' +
+      $('.menu__btn').attr('class') +
+      '">' +
+      $('.menu__btn').text() +
+      '</span>'
+  );
+}*/
 // Ожидание конца события (например для окнчательного выбора размера экрана)
 let waitForFinalEvent = (function () {
   let timers = {};
@@ -49,18 +58,9 @@ let waitForFinalEvent = (function () {
   };
 })();
 
-// Деактивируем кнопку для выпадающего меню в случае бургер-меню и изменение в форме поиска header типа кнопки и скрытой надписи на ней при изменении размеров экрана
+// Заменяем кнопку для выпадающего меню в случае бургер-меню на span и изменение в форме поиска header типа кнопки и скрытой надписи на ней при изменении размеров экрана
 
 $(window).on('resize', function () {
-  waitForFinalEvent(
-    function () {
-      if (window.innerWidth <= 700) {
-        $('.menu__btn').prop('disabled', true);
-      }
-    },
-    500,
-    'menu__btn'
-  );
   waitForFinalEvent(
     function () {
       if (window.innerWidth <= 568) {
@@ -80,12 +80,14 @@ $(window).on('resize', function () {
 $('.burger-btn').on('click', function () {
   $('.burger-btn').toggleClass('burger-btn--close');
   $('.menu').toggleClass('menu--active');
-  $('.menu');
+  $('.menu--active .menu__btn').prop('disabled', true);
 });
+
+// Замена button подменю на span
 
 // Скрываем кнопку корзины если она пустая
 let btnNum = $('.user-menu__btn--cart');
-let numContainer=btnNum.find('span.user-menu__btn-num');
+let numContainer = btnNum.find('span.user-menu__btn-num');
 let cartNum = parseInt(numContainer.html());
 if (cartNum > 0) {
   btnNum.show();

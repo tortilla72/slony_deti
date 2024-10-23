@@ -94,6 +94,10 @@
   .founder__info {
     flex-shrink: 0;
   }
+
+  .about-video__link {
+    height: 52vw;
+  }
 }
 
 @media (max-width: 864px) {
@@ -251,6 +255,21 @@
   .page-title,
   .title {
     font-size: 3.2rem;
+  }
+
+  .slider__title {
+    margin-bottom: 63px;
+    padding: 0;
+  }
+
+  .slider__btn-prev {
+    top: -53px;
+    left: 0;
+    right: auto;
+  }
+
+  .slider__btn-next {
+    top: -53px;
   }
 
   .box-text {
