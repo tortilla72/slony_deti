@@ -116,7 +116,6 @@
       <div class="slider__box">
         <div class="swiper about-video__slider">
           <div class="swiper-wrapper">
-
             <div class="swiper-slide about-video__slide">
               <a class="about-video__link" href="https://youtu.be/KdZXyT6WZDY?si=iPIMXmxxTqUKfLYf" data-fancybox>
                 <span class="visually-hidden">Урок 1</span>
@@ -154,7 +153,45 @@
       </div>
     </div>
   </section>
-
+  <div class="about__more">
+    <div class="container">
+      <h3 class="title about__more-title">
+        Чтобы узнать нас лучше, вы можете:
+      </h3>
+      <div class="about__more-inner">
+        <div class="about__more-item">
+          <picture>
+						<source srcset="images/about-more-blog.avif" type="image/avif">
+            <source srcset="images/about-more-blog.webp" type="image/webp">
+						<img class="about__more-img" src="images/about-more-blog.jpg" alt="">
+					</picture>
+          <span class="about__more-text">
+            Посмотреть, что мы пишем в своём <a class="about__more-link" href="#">блоге</a>
+          </span>
+        </div>
+        <div class="about__more-item">
+          <picture>
+						<source srcset="images/about-more-telegram.avif" type="image/avif">
+            <source srcset="images/about-more-telegram.webp" type="image/webp">
+						<img class="about__more-img" src="images/about-more-telegram.jpg" alt="">
+					</picture>
+          <span class="about__more-text">
+            Пообщаться с нами в <a class="about__more-link" href="#">Телеграме</a>
+          </span>
+        </div>
+        <div class="about__more-item">
+          <picture>
+						<source srcset="images/about-more-teachers.avif" type="image/avif">
+            <source srcset="images/about-more-teachers.webp" type="image/webp">
+						<img class="about__more-img" src="images/about-more-teachers.jpg" alt="">
+					</picture>
+          <span class="about__more-text">
+            Узнать больше о <a class="about__more-link" href="#">наших преподавателях</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

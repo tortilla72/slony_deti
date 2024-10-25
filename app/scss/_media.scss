@@ -25,6 +25,11 @@
     margin-left: 20px;
     text-align: left;
   }
+
+  .about__more-item {
+    padding: 210px 40px 40px;
+    min-height: auto;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -97,6 +102,11 @@
 
   .about-video__link {
     height: 52vw;
+  }
+
+  .about__more-inner {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -224,7 +234,6 @@
       margin-right: auto;
     }
   }
-
 }
 
 @media (max-width: 700px) {
@@ -373,6 +382,10 @@
   .founder__info {
     padding: 40px $padding-side-mobile;
   }
+
+  .about__more-text {
+    font-size: $font-box-small;
+  }
 }
 
 @media (max-width: 400px) {
@@ -442,5 +455,9 @@
   .statistics__text {
     margin-top: 0;
     font-size: $font-box-small;
+  }
+
+  .about__more {
+    margin-top: 80px;
   }
 }
