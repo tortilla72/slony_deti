@@ -1,0 +1,23 @@
+{% macro product_card(main_tag, favorite, product_name, product_description, path_product_img, product_img_extension) %}
+  <div class="product-card">
+    <div class="product-card__top">
+      <a class="product-card__tag" href="">{{main_tag}}</a>
+      <button class="product-card__favorite {% if favorite %}product-card__favorite--selected{% endif %}">
+        <span class="visually-hidden">Избранное</span>
+      </button>
+    </div>
+		<picture>
+			<source srcset="{{path_product_img}}.avif" type="image/avif">
+      <source srcset="{{path_product_img}}.webp" type="image/webp">
+			<img class="product-card__img" src="{{path_product_img}}.{{product_img_extension}}" alt="">
+		</picture>
+    <h4 class="product-card__title">{{product_name}}</h4>
+    <p class="product-card-text">
+        {{product_description}}
+    </p>
+    <div class="product-card__box-btn">
+      <button class="buy-btn product-card__btn">Записаться</button>
+      <a class="box-link product-card__link" href="#">Подробнее</a>
+    </div>
+  </div>
+{% endmacro %}

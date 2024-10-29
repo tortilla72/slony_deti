@@ -158,8 +158,8 @@ body {
   padding: 0 27px;
   display: block;
   flex-shrink: 0;
-  font-size: 1.4rem;
   font-weight: 400;
+  font-size: 1.4rem;
   line-height: 2.8rem;
   color: $text;
   text-align: center;
@@ -250,6 +250,57 @@ body {
   width: 50px;
   height: 55px;
   background-image: url('../images/sprite.svg#arrow-right-icon');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.buy-btn {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 8px 24px;
+  font-weight: 400;
+  line-height: 1.1875;
+  color: $text-light;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: $headerbtn-shadow;
+   //background-position: 0% 100%;
+  border: 1px solid $accent-light;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: $transition-btn;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: inherit;
+    z-index: -1;
+    transition: $transition-btn;
+  }
+
+  &::before {
+    background-color: $bg;
+  }
+
+  &::after {
+    background: $headerbtn-gradient;
+    opacity: 1;
+  }
+}
+
+.buy-btn:focus {
+  color: $text;
+  outline: none;
+  &::after {
+    opacity: 0;
+  }
 }
 
 .box-link {
@@ -342,6 +393,11 @@ body {
   }
 }
 
+.products-inner {
+  display: flex;
+  gap: 32px;
+}
+
 
 
 
@@ -371,6 +427,16 @@ body._pc {
 
   .slider__btn-next:hover:not(.swiper-button-disabled) {
     background-image: url('../images/sprite.svg#next-icon-hover');
+  }
+
+  .buy-btn:hover {
+    color: $text;
+    //z-index: auto;
+
+
+    &::after {
+      opacity: 0;
+    }
   }
 }
 

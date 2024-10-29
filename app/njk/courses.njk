@@ -1,0 +1,92 @@
+{% set title = "Курсы" %}
+{% set pageSlug  = "courses" %}
+
+{% extends "app/njk/layout/default.njk" %}
+{% block content %}
+  <section class="courses-best"> <!-- courses-best -->
+    <div class="container">
+      <h1 class="visually-hidden">Наши курсы</h1>
+      <h2 class="title">Лучшее</h2>
+      <div class="courses-best__inner">
+        <div class="courses-best__item">
+          <div class="courses-best__content">
+            <a class="product-card__tag" href="#">Главный тэг</a>
+            <picture>
+              <source srcset="images/products/product-img-1.avif" type="image/avif">
+              <source srcset="images/products/product-img-1.webp" type="image/webp">
+              <img class="product-card__img courses-best__img" src="images/products/product-img-1.png" alt="">
+            </picture>
+            <h4 class="product-card__title courses-best__title">
+              Название
+            </h4>
+            <p class="product-card-text">
+                Lorem ipsum dolor sit amet consectetur. Fermentum ullamcorper elementum mattis et. Sagittis lacus enim sed vehicula dis. Enim interdum amet dolor dui porttitor. Enim aliquam.
+            </p>
+          </div>
+          <div class="courses-best__box-btn">
+            <button class="buy-btn courses-best__btn">Записаться</button>
+            <a class="box-link courses-best__link" href="#">Подробнее</a>
+          </div>
+        </div>
+        <div class="courses-best__item">
+          <div class="courses-best__content">
+            <a class="product-card__tag" href="#">Главный тэг</a>
+            <picture>
+              <source srcset="images/products/product-img-1.avif" type="image/avif">
+              <source srcset="images/products/product-img-1.webp" type="image/webp">
+              <img class="product-card__img courses-best__img" src="images/products/product-img-1.png" alt="">
+            </picture>
+            <h4 class="product-card__title courses-best__title">
+              Название
+            </h4>
+            <p class="product-card-text">
+                Lorem ipsum dolor sit amet consectetur. Fermentum ullamcorper elementum mattis et. Sagittis lacus enim sed vehicula dis. Enim interdum amet dolor dui porttitor. Enim aliquam.
+            </p>
+          </div>
+          <div class="courses-best__box-btn">
+            <button class="buy-btn courses-best__btn">Записаться</button>
+            <a class="box-link courses-best__link" href="#">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /courses-best -->
+  <section class="courses-favorite"> <!-- courses-favorite -->
+    <div class="container">
+      <h2 class="title">Избранное</h2>
+      <div class="products-inner">
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            1,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            1,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            1,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+      </div>
+    </div>
+
+  </section> <!-- /courses-favorite -->
+{% endblock %}
+{% block scripts %}
+	<script src="js/main.min.js"></script>
+{% endblock %}

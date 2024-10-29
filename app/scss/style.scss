@@ -6,6 +6,7 @@
 @import '../module/_header/_header';
 @import '../module/_breadcrumbs/_breadcrumbs';
 @import '../module/_contact-form/_contact-form';
+@import '../module/_product-card/_product-card';
 @import '../module/_footer/_footer';
 
 /*********** index **********/
@@ -756,6 +757,45 @@ input.reviews__form-input {
   transition: $transition-link;
 }
 /*********** /about **********/
+
+/*********** courses **********/
+.courses-best__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 44px;
+}
+
+.courses-best__item {
+  padding: 20px 30px 24px;
+  flex-basis: 50%;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+.courses-best__content {
+  position: relative;
+  padding-right: 130px;
+}
+
+.courses-best__title {
+  margin: 20px 0 12px;
+}
+
+.courses-best__img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.courses-best__link {
+  margin-left: 10px;
+}
+
+.courses-favorite {
+  margin-top: 50px;
+}
+/*********** /courses **********/
 
 body._pc {
   .offer__item:hover {
