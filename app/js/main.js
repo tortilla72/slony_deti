@@ -35,6 +35,7 @@ if (isMobile.any()) {
 //= ../../node_modules/locomotive-scroll/dist/locomotive-scroll.js
 //= ../../node_modules/swiper/swiper-bundle.js
 //= ../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js
+//= ../module/_header/_header.js
 $(function () {
   // Плавный скролл
   let scroll = new LocomotiveScroll();
@@ -99,7 +100,7 @@ $(function () {
     });
   });
 
-// Слайдер видео на странице about
+  // Слайдер видео на странице about
   const swiperAboutVideo = new Swiper('.about-video__slider', {
     slidesPerView: 1,
     spaceBetween: 40,
@@ -114,7 +115,43 @@ $(function () {
     },
   });
 
-  //= ../module/_header/_header.js
+  /**** Кнопка сброса фильтров тэгов на странице магазина ****/
+  // Проверяем наличие применённых тэгов на странице
+  $('.filter-tags__input').each(function(){
+    if ($(this).prop('checked')) {
+      $('.filter-tags__reset').prop('disabled', false);
+    } else {
+      $('.filter-tags__reset').prop('disabled', true);
+    }
+  });
+
+  // Обработка события нажатия на фильтр
+  $('.filter-tags__input').on('change', function(){
+    if ($(this).prop('checked')){
+      $('.filter-tags__reset').prop('disabled', false);
+    }else {
+      let numChecked=0;
+      $('.filter-tags__input').each(function(){
+        if ($(this).prop('checked')) {
+          numChecked+=1;
+        }
+      });
+      if (numChecked == 0) {
+        $('.filter-tags__reset').prop('disabled', true);
+      }
+    }
+  });
+
+  // Обработка события нажатия на кнопку сброса
+  $('.filter-tags__reset').on('click', function() {
+    $('.filter-tags__input').each(function(){
+      $(this).prop('checked', false);
+    });
+    $(this).prop('disabled', true);
+  });
+
+  /**** /Кнопка сброса фильтров тэгов на странице магазина ****/
+
 
   //= ../module/_footer/_footer.js
 });

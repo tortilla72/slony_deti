@@ -792,8 +792,20 @@ input.reviews__form-input {
   margin-left: 10px;
 }
 
-.courses-favorite {
+.courses-favorite,
+.courses-shop {
   margin-top: 50px;
+}
+
+.courses-favorite__title,
+.courses-shop__title {
+  margin-bottom: 40px;
+}
+
+.courses-shop {
+  .filter-tags__form {
+    margin-bottom: 50px;
+  }
 }
 /*********** /courses **********/
 

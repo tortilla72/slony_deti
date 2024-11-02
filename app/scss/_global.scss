@@ -265,7 +265,7 @@ body {
   text-align: center;
   background-color: transparent;
   box-shadow: $headerbtn-shadow;
-   //background-position: 0% 100%;
+  //background-position: 0% 100%;
   border: 1px solid $accent-light;
   border-radius: 30px;
   cursor: pointer;
@@ -319,6 +319,57 @@ body {
   &:focus {
     background-color: $menu-hover;
     outline: $outline-none;
+  }
+}
+
+.filter-tags__form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  .filter-tags__reset,
+  .filter-tags__checkbox {
+    padding: 6px 30px;
+    display: inline-block;
+    font-weight: 500;
+    line-height: 1.1875;
+    background-color: $bg-light;
+    border: 1px solid $text;
+    border-radius: 10px;
+    box-shadow: $search_shadow;
+    transition: $transition-btn;
+    caret-color: transparent;
+    cursor: pointer;
+  }
+
+  .filter-tags__reset:disabled,
+  .filter-tags__input:checked ~ .filter-tags__checkbox {
+    font-weight: 600;
+    color: $text-light;
+    border: 1px solid $bg-filter-checked;
+    background-color: $bg-filter-checked;
+  }
+
+  .filter-tags__input:checked ~ .filter-tags__checkbox {
+    position: relative;
+    padding-right: 41px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 11px;
+      height: 11px;
+      display: block;
+      background-image: url('../images/sprite.svg#filter-close-icon');
+      background-position: center;
+      background-size: cover;
+      transform: translateY(-5px);
+    }
+  }
+
+ .filter-tags__input:focus ~ .filter-tags__checkbox {
+    outline: $outline;
   }
 }
 
@@ -382,7 +433,7 @@ body {
   &::before {
     position: absolute;
     content: '';
-    top:16px;
+    top: 16px;
     left: 16px;
     width: 32px;
     height: 32px;
@@ -392,14 +443,6 @@ body {
     background-size: cover;
   }
 }
-
-.products-inner {
-  display: flex;
-  gap: 32px;
-}
-
-
-
 
 body._pc {
   .nav-btn:hover {
@@ -414,7 +457,9 @@ body._pc {
   }
 
   .box-link:hover {
-    background-color: $menu-hover;
+    color: $text-light;
+    border: 1px solid $bg-filter-checked;
+    background-color: $bg-filter-checked;
   }
 
   .popup-close-btn:hover {
@@ -432,7 +477,6 @@ body._pc {
   .buy-btn:hover {
     color: $text;
     //z-index: auto;
-
 
     &::after {
       opacity: 0;
@@ -454,4 +498,3 @@ body._pc {
     left: 10px;
   }
 }
-

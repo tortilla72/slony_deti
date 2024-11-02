@@ -1,3 +1,8 @@
+.products-inner {
+  display: flex;
+  gap: 32px;
+}
+
 .product-card {
   max-width: 266px;
   min-height: 413px;

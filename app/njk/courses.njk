@@ -53,7 +53,7 @@
   </section> <!-- /courses-best -->
   <section class="courses-favorite"> <!-- courses-favorite -->
     <div class="container">
-      <h2 class="title">Избранное</h2>
+      <h2 class="title courses-favorite__title">Избранное</h2>
       <div class="products-inner">
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
@@ -84,8 +84,87 @@
         }}
       </div>
     </div>
-
   </section> <!-- /courses-favorite -->
+  <section class="courses-shop"> <!-- courses-shop -->
+    <div class="container">
+      <h2 class="title courses-shop__title">
+        Все курсы и материалы
+      </h2>
+      <form class="filter-tags__form">
+        <button class="filter-tags__reset" type="button">всё</button>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="для учителей" type="checkbox">
+          <span class="filter-tags__checkbox">для учителей</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="материалы" type="checkbox">
+          <span class="filter-tags__checkbox">материалы</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="курсы" type="checkbox">
+          <span class="filter-tags__checkbox">курсы</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="для детей до 10 лет" type="checkbox">
+          <span class="filter-tags__checkbox">для детей до 10 лет</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="для родителей" type="checkbox">
+          <span class="filter-tags__checkbox">для родителей</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="литература" type="checkbox">
+          <span class="filter-tags__checkbox">литература</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="русский язык" type="checkbox">
+          <span class="filter-tags__checkbox">русский язык</span>
+        </label>
+        <label class="filter-tags__label">
+          <input class="visually-hidden filter-tags__input" name="математика" type="checkbox">
+          <span class="filter-tags__checkbox">математика</span>
+        </label>
+      </form>
+      <div class="products-inner courses-shop__content">
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            0,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            0,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            0,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+        {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+          {{ product_card(
+            "Главный тэг",
+            0,
+            "Название",
+            "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+            "images/products/product-img-1",
+            "png")
+        }}
+      </div>
+    </div>
+  </section> <!-- /courses-shop -->
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>
