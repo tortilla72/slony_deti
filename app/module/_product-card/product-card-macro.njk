@@ -1,7 +1,7 @@
 {% macro product_card(main_tag, favorite, product_name, product_description, path_product_img, product_img_extension) %}
   <div class="product-card">
     <div class="product-card__top">
-      <a class="product-card__tag" href="">{{main_tag}}</a>
+      <a class="product-card__tag" href="#">{{main_tag}}</a>
       <button class="product-card__favorite {% if favorite %}product-card__favorite--selected{% endif %}">
         <span class="visually-hidden">Избранное</span>
       </button>

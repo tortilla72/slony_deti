@@ -1,0 +1,31 @@
+{% macro team_popup(id_popup, title_popup, subtitle_popup, text, blockquote_text, path_img, img_extension) %}
+  <div class="popup team-popup" id="{{id_popup}}">
+    <div class="team-popup__wrapper">
+      <div class="team-popup__content">
+        <div class="team-popup__content-top">
+          <h3 class="team-popup__title">
+            {{title_popup}}
+          </h3>
+          <p class="team-popup__subtitle">
+            {{subtitle_popup}}
+          </p>
+          <p class="team-popup__text">
+            {{text}}
+          </p>
+        </div>
+        <blockquote class="team-popup__blockquote">
+          <p class="team-popup__blockquote-text">
+            {{blockquote_text}}
+          </p>
+        </blockquote>
+      </div>
+      <div class="team-popup__box-img">
+        <picture>
+          <source srcset="{{path_img}}.avif" type="image/avif">
+          <source srcset="{{path_img}}.webp" type="image/webp">
+          <img class="team-popup-img" src="{{path_img}}.{{img_extension}}" alt="">
+        </picture>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

@@ -55,24 +55,26 @@ $(function () {
     },
   });
 
-  // Всплывающее окно для отзыва
-  $('.reviews__btn').fancybox({
-    type: 'inline',
-    closeExisting: true,
-    btnTpl: {
-      smallBtn:
-        '<button class="popup-close-btn" data-fancybox-close><span class="visually-hidden">Закрыть.</span></button>',
-    },
-    afterLoad: function () {
-      $('.reviews__popup').addClass('animate__animated fadeInDown');
-    },
-    beforeClose: function () {
-      $('.reviews__popup').addClass('animate__animated fadeOutDown');
-    },
-  });
+  // Всплывающее окно
+   $('.btn-popup-open').fancybox({
+     type: 'inline',
+     closeExisting: true,
+     btnTpl: {
+       smallBtn:
+         '<button class="popup-close-btn" data-fancybox-close><span class="visually-hidden">Закрыть.</span></button>',
+     },
+     afterLoad: function () {
+       $('.popup').addClass('animate__animated fadeInDown');
+     },
+     beforeClose: function () {
+       $('.popup').addClass('animate__animated fadeOutDown');
+     },
+     backFocus: false,
+     autoFocus: false,
+   });
 
   // Проверка удачной отправки формы отзыва
-  $('.reviews__form').on('submit', function (e) {
+  $('.reviews-popup__form').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
       url: this.action,
@@ -89,10 +91,10 @@ $(function () {
                 '<button class="popup-close-btn" data-fancybox-close><span class="visually-hidden">Закрыть.</span></button>',
             },
             afterLoad: function () {
-              $('.reviews__popup').addClass('animate__animated fadeInDown');
+              $('.review-popup').addClass('animate__animated fadeInDown');
             },
             beforeClose: function () {
-              $('.reviews__popup').addClass('animate__animated fadeOutDown');
+              $('.reviews-popup').addClass('animate__animated fadeOutDown');
             },
           });
         }, 100);
@@ -115,9 +117,14 @@ $(function () {
     },
   });
 
+  // Кнопка выбора в вишлист
+  $('.product-card__favorite').on('click', function () {
+    $(this).toggleClass('product-card__favorite--selected');
+  });
+
   /**** Кнопка сброса фильтров тэгов на странице магазина ****/
   // Проверяем наличие применённых тэгов на странице
-  $('.filter-tags__input').each(function(){
+  $('.filter-tags__input').each(function () {
     if ($(this).prop('checked')) {
       $('.filter-tags__reset').prop('disabled', false);
     } else {
@@ -126,14 +133,14 @@ $(function () {
   });
 
   // Обработка события нажатия на фильтр
-  $('.filter-tags__input').on('change', function(){
-    if ($(this).prop('checked')){
+  $('.filter-tags__input').on('change', function () {
+    if ($(this).prop('checked')) {
       $('.filter-tags__reset').prop('disabled', false);
-    }else {
-      let numChecked=0;
-      $('.filter-tags__input').each(function(){
+    } else {
+      let numChecked = 0;
+      $('.filter-tags__input').each(function () {
         if ($(this).prop('checked')) {
-          numChecked+=1;
+          numChecked += 1;
         }
       });
       if (numChecked == 0) {
@@ -143,15 +150,14 @@ $(function () {
   });
 
   // Обработка события нажатия на кнопку сброса
-  $('.filter-tags__reset').on('click', function() {
-    $('.filter-tags__input').each(function(){
+  $('.filter-tags__reset').on('click', function () {
+    $('.filter-tags__input').each(function () {
       $(this).prop('checked', false);
     });
     $(this).prop('disabled', true);
   });
 
   /**** /Кнопка сброса фильтров тэгов на странице магазина ****/
-
 
   //= ../module/_footer/_footer.js
 });

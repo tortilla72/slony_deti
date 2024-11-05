@@ -1,0 +1,74 @@
+.team-popup {
+  padding: 0;
+}
+
+.team-popup__wrapper {
+  display: flex;
+  min-height: calc(100vh - 12px);
+}
+
+.team-popup__content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.15;
+  background-color: $bg;
+}
+
+.team-popup__title {
+  margin: 0 0 10px;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 1.125;
+}
+
+
+.team-popup__subtitle {
+  margin: 0 0 30px;
+  color: $text-blockquote;
+}
+
+.team-popup__text {
+  margin: 0 0 50px;
+}
+.team-popup__blockquote {
+  position: relative;
+  margin: 0;
+  padding-left: 126px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 96px;
+    height: 96px;
+    display: block;
+    background-image: url('../images/sprite.svg#quote-icon');
+    @include svg-icon;
+  }
+}
+
+.team-popup__blockquote-text {
+  margin: 0;
+  color: $text-blockquote;
+}
+
+.team-popup__box-img {
+  padding: 60px;
+  min-width: 45.345%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-popup-img {
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  object-fit: cover;
+}

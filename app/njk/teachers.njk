@@ -1,0 +1,133 @@
+{% set title = "Учителя" %}
+{% set pageSlug  = "teachers" %}
+{% set parentPage = "about" %}
+{% set parentPageName = "О нас" %}
+
+{% extends "app/njk/layout/default.njk" %}
+{% block content %}
+  <section class="teachers-banner"><!-- teachers-banner -->
+    <div class="container">
+      <div class="teachers-banner__inner">
+        <div class="teachers-banner__content">
+          <h1 class="page-title teachers-banner__title">Наша команда</h1>
+          <p class="teachers-banner__text">
+            Lorem ipsum dolor sit amet consectetur. Vitae amet lacus accumsan arcu id. Dolor feugiat sagittis vel nulla eget. Justo duis sollicitudin metus donec cursus neque arcu. Dui sit non ut dolor eget. Donec ac convallis elementum dictum vulputate non vel. Urna faucibus quis sed mattis pulvinar enim vitae. Enim ac urna volutpat neque. Magnis eget risus ultricies eget urna a nibh facilisis. Nisl amet ornare blandit est velit morbi. Sed in sagittis.
+          </p>
+        </div>
+        <div class="teachers-banner__box-img">
+          <picture>
+            <source srcset="images/info/info1.avif" type="image/avif">
+            <source srcset="images/info/info1.webp" type="image/webp">
+            <img class="teachers-banner__img" src="images/info/info1.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /teachers-banner -->
+  <section class="section founder"> <!-- founder -->
+    <div class="container">
+      <h2 class="title">
+        Основатели школы
+      </h2>
+      <div class="founder__inner">
+        <div class="founder__item">
+          <div class="founder__info">
+            <h3 class="founder__info-title">
+              Юлия Лебедева
+            </h3>
+            <span class="founder__info-subtitle">
+              Короткая информация о человеке
+            </span>
+            <div class="founder__info-text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Semper ipsum et ante pharetra viverra mi pharetra. Etiam id nulla donec auctor id duis vestibulum erat. Dolor venenatis cursus consequat sapien pharetra turpis. Elementum sed pellentesque facilisi ut. Eget viverra tristique nulla proin vitae. Odio morbi cursus tellus augue etiam quis morbi quam. Porttitor in at vestibulum lacus. Aliquet in risus nibh aliquam nisl. At mollis sit non ac sodales vel porta aliquam. Enim velit dui ultrices nec.
+              </p>
+              <p>
+                At lorem dictum et a at adipiscing. Urna integer vitae lacus nisi nec proin duis aliquam. Enim vitae ac.
+              </p>
+            </div>
+            <a class="box-link founder__info-link" href="#">
+              Узнать больше
+            </a>
+          </div>
+          <div class="founder__box-img">
+            <picture>
+              <source srcset="images/founder-1.avif" type="image/avif">
+                <source srcset="images/founder-1.webp" type="image/webp">
+              <img class="founder__img" src="images/founder-1.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+        <div class="founder__item">
+          <div class="founder__info">
+            <h3 class="founder__info-title">
+              Наталья Шамова
+            </h3>
+            <span class="founder__info-subtitle">
+              Короткая информация о человеке
+            </span>
+            <div class="founder__info-text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Semper ipsum et ante pharetra viverra mi pharetra. Etiam id nulla donec auctor id duis vestibulum erat. Dolor venenatis cursus consequat sapien pharetra turpis. Elementum sed pellentesque facilisi ut. Eget viverra tristique nulla proin vitae. Odio morbi cursus tellus augue etiam quis morbi quam. Porttitor in at vestibulum lacus. Aliquet in risus nibh aliquam nisl. At mollis sit non ac sodales vel porta aliquam. Enim velit dui ultrices nec.
+              </p>
+              <p>
+                At lorem dictum et a at adipiscing. Urna integer vitae lacus nisi nec proin duis aliquam. Enim vitae ac.
+              </p>
+            </div>
+            <a class="box-link founder__info-link" href="#">
+              Узнать больше
+            </a>
+          </div>
+          <div class="founder__box-img">
+            <picture>
+              <source srcset="images/founder-2.avif" type="image/avif">
+                <source srcset="images/founder-2.webp" type="image/webp">
+              <img class="founder__img" src="images/founder-2.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /founder -->
+  <section class="section team"> <!-- team -->
+    <div class="container">
+      <h2 class="title">Преподаватели</h2>
+      <div class="team__inner">
+        <div class="team__item">
+          <a class="btn-popup-open team__item-btn" href="#team-popup" data-fancybox>
+            <span class="visually-hidden">Подробнее</span>
+          </a>
+          <div class="team__item-box-img">
+            <picture>
+              <source srcset="images/products/product-img-1.avif" type="image/avif">
+              <source srcset="images/products/product-img-1.webp" type="image/webp">
+              <img class="team__item-img" src="images/products/product-img-1.png" alt="">
+            </picture>
+          </div>
+          <div class="team__item-content">
+            <h4 class="team__item-title">Наталья</h4>
+            <p class="team__item-text">
+              Учитель русского языка как иностранного
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /team -->
+
+  <!-- POP-UP -->
+    {% from "app/module/_team-popup/team-popup-macro.njk" import team_popup %}
+    {{ team_popup(
+      "team-popup",
+      "Наталья Шамова",
+      "Короткое описание должности и деятельности в школе",
+      "Lorem ipsum dolor sit amet consectetur. Mattis vestibulum volutpat aliquam cursus pharetra nec amet sed auctor. Faucibus adipiscing ullamcorper ac condimentum. Faucibus amet condimentum elementum arcu felis nullam. Donec proin ipsum rhoncus tempus ipsum commodo vestibulum arcu quisque. Urna vitae non sed sit sed commodo. Eu tincidunt adipiscing posuere egestas pulvinar a risus felis. A tortor augue placerat aliquam amet leo amet. Blandit a lobortis arcu mi nunc tincidunt porttitor congue aliquet. Tincidunt eu vulputate sit nibh enim. Ultrices potenti malesuada montes nascetur ullamcorper. Sit quam nunc risus mi sem. Donec fames imperdiet in consectetur eu sed integer posuere. In.",
+			"Lorem ipsum dolor sit amet consectetur. Dui pretium suspendisse ligula urna ligula quis vel facilisi mauris. Tortor scelerisque et arcu commodo vestibulum diam. Enim.",
+      "images/team/team-1",
+      "png")
+      }}
+  <!-- /POP-UP -->
+{% endblock %}
+{% block scripts %}
+	<script src="js/main.min.js"></script>
+{% endblock %}

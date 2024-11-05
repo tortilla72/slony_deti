@@ -4,6 +4,7 @@ $title: #262626;
 $text-copy: #848484;
 $breadcrumbs-active: #9b9b9b;
 $link: #4da9ff;
+$text-blockquote: #999;
 
 $accent-light: #f6b569;
 $accent-dark: #718cd2;
@@ -44,3 +45,9 @@ $font-box: 2.4rem;
 $font-box-small: 2rem;
 
 $padding-side-mobile: 30px;
+
+@mixin svg-icon {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
