@@ -239,12 +239,17 @@
             </p>
           </div>
         </div>
-
-
       </div>
     </div>
   </section> <!-- /team -->
-
+  {% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+	{{ contact_form(
+		"form-question",
+		"",
+		"form-question",
+		"Остались вопросы?",
+		"Оставьте заявку и мы свяжемся с вами в течение 30 минут в рабочее время с 10:00 до 20:00 по МСК. Задайте нам вопросы, а мы на них ответим и поможем подобрать занятия")
+	}}
   <!-- POP-UP -->
     {% from "app/module/_team-popup/team-popup-macro.njk" import team_popup %}
     {{ team_popup(

@@ -1,11 +1,21 @@
 @media (max-width: 1200px) {
   .tarif__list {
     flex-wrap: wrap;
-    justify-content: center;
+  }
+
+  .tarif__item {
+    flex-basis: 30.3%;
   }
 }
 
 @media (max-width: 1120px) {
+  .tarif__list {
+    justify-content: center;
+  }
+
+  .tarif__item {
+    flex-basis: 47.5%;
+  }
   .about__more-item {
     padding: 210px 40px 40px;
     min-height: auto;
@@ -203,6 +213,14 @@
     }
   }
 
+  .tarif__item {
+    flex-basis: 46%;
+  }
+
+  .tarif__btn,
+  .tarif__link {
+    font-size: $font-box-small;
+  }
   .courses-best__inner {
     flex-direction: column;
     gap: 30px;
@@ -230,6 +248,17 @@
   .reviews-popup__form-btn-wrapper-text {
     margin: 0;
     margin-top: 20px;
+  }
+
+  .tarif__item {
+    flex-basis: 100%;
+  }
+
+  .tarif__btn,
+  .tarif__link {
+    margin-left: auto;
+    margin-right: auto;
+    width: 297px;
   }
 
   .statistics__text {
@@ -425,25 +454,19 @@
     font-size: $font-box-small;
   }
 
-  .tarif__list {
-    display: block;
-  }
-
   .tarif__item {
-    position: relative;
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  .tarif__item + .tarif__item {
-    margin-top: 40px;
-  }
-  .tarif__box-img {
-    width: 100%;
-  }
-
   .tarif__text {
     font-size: 1.6rem;
+  }
+
+  .tarif__btn,
+  .tarif__link {
+    margin: 0 0 30px;
+    width: 100%;
   }
 
   .faq {
