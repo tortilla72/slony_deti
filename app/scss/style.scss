@@ -677,6 +677,7 @@
   margin-top: 50px;
 }
 
+
 .courses-favorite__title,
 .courses-shop__title {
   margin-bottom: 40px;
@@ -687,6 +688,7 @@
     margin-bottom: 50px;
   }
 }
+
 /*********** /courses **********/
 
 /*********** teachers **********/
@@ -714,17 +716,15 @@
   width: 100%;
 }
 
-.team__inner {
+/*.team__inner {
   display: flex;
   gap: 32px;
 }
+  */
 
 .team__item {
   position: relative;
   padding: 42px 20px;
-  flex-basis: 266px;
-  background-color: $bg-light;
-  border-radius: $radius;
 }
 
 .team__item-btn {

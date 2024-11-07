@@ -410,6 +410,11 @@ body {
   background-image: url('../images/sprite.svg#next-icon');
 }
 
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
 
 .popup {
   width: 1160px;

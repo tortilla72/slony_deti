@@ -93,6 +93,11 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .cards-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 864px) {
@@ -239,7 +244,7 @@
 
   .page-title,
   .title {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   .slider__title {
@@ -357,6 +362,10 @@
 
   .founder__info {
     padding: 40px $padding-side-mobile;
+  }
+
+  .founder__info-title {
+    font-size: 2.8rem;
   }
 
   .about__more-text {
