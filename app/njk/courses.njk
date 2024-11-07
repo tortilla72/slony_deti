@@ -55,7 +55,7 @@
   <section class="courses-favorite"> <!-- courses-favorite -->
     <div class="container">
       <h2 class="title courses-favorite__title">Избранное</h2>
-      <div class="products-inner">
+      <div class="cards-wrapper">
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
             "Главный тэг",
@@ -126,7 +126,7 @@
           <span class="filter-tags__checkbox">математика</span>
         </label>
       </form>
-      <div class="products-inner courses-shop__content">
+      <div class="cards-wrapper courses-shop__content">
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
             "Главный тэг",
