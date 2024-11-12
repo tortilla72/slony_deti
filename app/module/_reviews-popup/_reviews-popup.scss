@@ -97,11 +97,11 @@ input.reviews-popup__form-input {
 /* /reviews__popup */
 
 /* reviews__thanks */
-.reviews__thanks {
+.reviews-thanks {
   display: none;
 }
 
-.reviews__thanks-img {
+.reviews-thanks__img {
   margin: 0 21.7% 0 auto;
   width: 150px;
   height: auto;
@@ -150,7 +150,7 @@ input.reviews-popup__form-input {
     width: auto;
   }
 
-  .reviews__thanks-img {
+  .reviews-thanks__img {
     margin: 0;
   }
 

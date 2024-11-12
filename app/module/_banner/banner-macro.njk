@@ -1,0 +1,21 @@
+  {% macro banner(banner_title, banner_text, path_img, img_extension) %}
+  <section class="banner"><!-- banner -->
+    <div class="container">
+      <div class="banner__inner">
+        <div class="banner__content">
+          <h1 class="page-title banner__title">{{banner_title}}</h1>
+          <p class="banner__text">
+            {{banner_text}}
+          </p>
+        </div>
+        <div class="banner__box-img">
+          <picture>
+            <source srcset="{{path_img}}.avif" type="image/avif">
+            <source srcset="{{path_img}}.webp" type="image/webp">
+            <img class="banner__img" src="{{path_img}}.{{img_extension}}" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /banner -->
+{% endmacro %}

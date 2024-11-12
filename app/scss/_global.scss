@@ -321,6 +321,26 @@ body {
   }
 }
 
+.reviews-btn {
+  padding: 20px 36px 20px 34px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.167;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid $text;
+  border-radius: 10px;
+  transition: $transition-btn;
+  outline: $outline-none;
+  caret-color: transparent;
+
+  &:focus {
+    color: $text-light;
+    background-color: $bg-cart;
+  }
+}
+
 .filter-tags__form {
   display: flex;
   gap: 10px;
@@ -366,7 +386,7 @@ body {
     }
   }
 
- .filter-tags__input:focus ~ .filter-tags__checkbox {
+  .filter-tags__input:focus ~ .filter-tags__checkbox {
     outline: $outline;
   }
 }
@@ -474,6 +494,11 @@ body._pc {
     color: $text-light;
     border: 1px solid $bg-filter-checked;
     background-color: $bg-filter-checked;
+  }
+
+  .reviews-btn:hover {
+    color: $text-light;
+    background-color: $accent-dark;
   }
 
   .popup-close-btn:hover {

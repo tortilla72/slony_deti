@@ -1,0 +1,153 @@
+{% set title = "Отзывы" %}
+{% set pageSlug  = "reviews" %}
+{% set parentPage = "about" %}
+{% set parentPageName = "О нас" %}
+
+{% extends "app/njk/layout/default.njk" %}
+{% block content %}
+  {% from "app/module/_banner/banner-macro.njk" import banner %}
+	{{ banner(
+		"Отзывы учеников, родителей и учителей",
+		"Lorem ipsum dolor sit amet consectetur. Vitae amet lacus accumsan arcu id. Dolor feugiat sagittis vel nulla eget. Justo duis sollicitudin metus donec cursus neque arcu. Dui sit non ut dolor eget.",
+		"images/info/info1",
+		"jpg")
+	}}
+
+  <section class="section reviews-survey"> <!-- reviews-survey -->
+    <div class="container">
+      <h2 class="title slider__title reviews-survey__title">
+        Что о нас говорят
+      </h2>
+      <div class="slider__box">
+        <form class="filter-tags__form  reviews-survey__filter">
+          <button class="filter-tags__reset swiper-filter__reset">Все отзывы</button>
+          <label class="filter-tags__label">
+            <input class="visually-hidden filter-tags__input swiper-filter__input" type="checkbox" name="ученики и родители">
+            <span class="filter-tags__checkbox">ученики и родители</span>
+          </label>
+          <label class="filter-tags__label">
+            <input class="visually-hidden filter-tags__input swiper-filter__input" type="checkbox" name="учителя">
+            <span class="filter-tags__checkbox">учителя</span>
+          </label>
+        </form>
+          <div class="swiper reviews-survey__slider">
+            <div class="swiper-wrapper reviews-survey__slider-wrapper">
+
+              <div class="swiper-slide reviews-survey__slide">
+                <span class="reviews-survey__author">
+                  Виктор Кошеваров
+                </span>
+                <blockquote class="reviews-survey__blockquote" data-trim="380">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Commodo malesuada semper condimentum mi adipiscing tristique sed. Non cras enim elit sociis dolor venenatis varius fusce etiam. Aliquet purus nisi volutpat id odio lorem lorem venenatis. Quis sodales pharetra duis neque. Viverra sed ultrices donec auctor. Congue nunc mauris nec lectus sed diam pretium vitae.
+                  </p>
+                  <p>
+                    Vestibulum in volutpat vel sit.
+                  </p>
+                </blockquote>
+                <a class="btn-popup-open reviews-survey__slide-link" href="#reviews-survey__slide-popup" data-fancybox>
+                  Читать полностью
+                </a>
+              </div>
+              <div class="swiper-slide reviews-survey__slide">
+                <span class="reviews-survey__author">
+                  Виктор Кошеваров
+                </span>
+                <blockquote class="reviews-survey__blockquote" data-trim="380">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Commodo malesuada semper condimentum mi adipiscing tristique sed. Non cras enim elit sociis dolor venenatis varius fusce etiam. Aliquet purus nisi volutpat id odio lorem lorem venenatis. Quis sodales pharetra duis neque. Viverra sed ultrices donec auctor. Congue nunc mauris nec lectus sed diam pretium vitae.
+                  </p>
+                  <p>
+                    Vestibulum in volutpat vel sit.
+                  </p>
+                </blockquote>
+                <a class="btn-popup-open reviews-survey__slide-link" href="#reviews-survey__slide-popup" data-fancybox>
+                  Читать полностью
+                </a>
+              </div>
+              <div class="swiper-slide reviews-survey__slide">
+                <span class="reviews-survey__author">
+                  Виктор Кошеваров
+                </span>
+                <blockquote class="reviews-survey__blockquote" data-trim="380">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Commodo malesuada semper condimentum mi adipiscing tristique sed. Non cras enim elit sociis dolor venenatis varius fusce etiam. Aliquet purus nisi volutpat id odio lorem lorem venenatis. Quis sodales pharetra duis neque. Viverra sed ultrices donec auctor. Congue nunc mauris nec lectus sed diam pretium vitae.
+                  </p>
+                  <p>
+                    Vestibulum in volutpat vel sit.
+                  </p>
+                </blockquote>
+                <a class="btn-popup-open reviews-survey__slide-link" href="#reviews-survey__slide-popup" data-fancybox>
+                  Читать полностью
+                </a>
+              </div>
+              <div class="swiper-slide reviews-survey__slide">
+                <span class="reviews-survey__author">
+                  Виктор Кошеваров
+                </span>
+                <blockquote class="reviews-survey__blockquote" data-trim="380">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur. Commodo malesuada semper condimentum mi adipiscing tristique sed. Non cras enim elit sociis dolor venenatis varius fusce etiam. Aliquet purus nisi volutpat id odio lorem lorem venenatis. Quis sodales pharetra duis neque. Viverra sed ultrices donec auctor. Congue nunc mauris nec lectus sed diam pretium vitae.
+                  </p>
+                  <p>
+                    Vestibulum in volutpat vel sit.
+                  </p>
+                </blockquote>
+                <a class="btn-popup-open reviews-survey__slide-link" href="#reviews-survey__slide-popup" data-fancybox>
+                  Читать полностью
+                </a>
+              </div>
+
+
+          </div>
+        </div>
+
+
+        <button class="swiper-button-prev slider__btn-prev reviews-survey__btn-prev"></button>
+  			<button class="swiper-button-next slider__btn-next reviews-survey__btn-next"></button>
+      </div>
+      <div class="reviews-survey__btn-wrapper">
+        <a class="btn-popup-open reviews-btn" href="#reviews__popup" data-fancybox>Оставить отзыв</a>
+      </div>
+    </div>
+  </section> <!-- /reviews-survey -->
+  {% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+	{{ contact_form(
+		"form-question",
+		"",
+		"form-question",
+		"Остались вопросы?",
+		"Оставьте заявку и мы свяжемся с вами в течение 30 минут в рабочее время с 10:00 до 20:00 по МСК. Задайте нам вопросы, а мы на них ответим и поможем подобрать занятия")
+	}}
+
+ 	<!-- POP-UP -->
+      <div class="popup reviews-survey__slide-popup" id="reviews-survey__slide-popup">
+        <h3 class="title reviews-survey__popup-title">Отзыв написал(a) <span>Виктор Кошеваров</span></h3>
+        <div class="reviews-survey__text-wrapper">
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Commodo malesuada semper condimentum mi adipiscing tristique sed. Non cras enim elit sociis dolor venenatis varius fusce etiam. Aliquet purus nisi volutpat id odio lorem lorem venenatis. Quis sodales pharetra duis neque. Viverra sed ultrices donec auctor. Congue nunc mauris nec lectus sed diam pretium vitae.
+          </p>
+          <p>
+            Vestibulum in volutpat vel sit.
+          </p>
+        </div>
+      </div>
+
+    {% from "app/module/_reviews-popup/reviews-popup-macro.njk" import reviews_popup %}
+    {{ reviews_popup(
+      "reviews__popup",
+      "Отзыв",
+      "Напишите свой отзыв о нашей работе и он навсегда останется на нашем сайте",
+      "reviews__form",
+			"reviews__form",
+			"reviews-thanks",
+			"Отзыв",
+			"Мы получили ваш отзыв. После модерации он появится на сайте, а мы отправим вам промокод",
+      "images/rewies-thanks",
+      "png")
+      }}
+	<!-- /POP-UP -->
+{% endblock %}
+{% block scripts %}
+	<script src="js/main.min.js"></script>
+{% endblock %}

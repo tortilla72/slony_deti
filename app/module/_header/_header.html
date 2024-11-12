@@ -40,6 +40,13 @@
                 <a class="menu__link" href="teachers.html">Учителя</a>
                 {% endif %}
               </li>
+              <li class="menu__item">
+                {% if pageSlug == 'reviews' %}
+                <span class="menu__link menu__link--active">Отзывы</span>
+                {% else %}
+                <a class="menu__link" href="reviews.html">Отзывы</a>
+                {% endif %}
+              </li>
             </ul>
           </li>
           <li class="menu__item">

@@ -1,0 +1,58 @@
+.banner {
+  &__inner {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    background-color: $bg-light;
+    border-radius: $radius;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    max-width: 612px;
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 520px;
+    font-size: $font-box;
+    line-height: 1.333;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 864px) {
+  .banner__inner {
+    flex-direction: column;
+  }
+
+  .banner__text {
+    max-width: none;
+  }
+
+  .banner__box-img {
+    order: -1;
+  }
+}
+
+@media (max-width: 568px) {
+  .banner__inner {
+    padding-left: $padding-side-mobile;
+    padding-right: $padding-side-mobile;
+  }
+
+  .banner__text {
+    font-size: $font-box-small;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner__text {
+    font-size: 1.6rem;
+  }
+}

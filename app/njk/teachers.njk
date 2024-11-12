@@ -5,25 +5,13 @@
 
 {% extends "app/njk/layout/default.njk" %}
 {% block content %}
-  <section class="teachers-banner"><!-- teachers-banner -->
-    <div class="container">
-      <div class="teachers-banner__inner">
-        <div class="teachers-banner__content">
-          <h1 class="page-title teachers-banner__title">Наша команда</h1>
-          <p class="teachers-banner__text">
-            Lorem ipsum dolor sit amet consectetur. Vitae amet lacus accumsan arcu id. Dolor feugiat sagittis vel nulla eget. Justo duis sollicitudin metus donec cursus neque arcu. Dui sit non ut dolor eget. Donec ac convallis elementum dictum vulputate non vel. Urna faucibus quis sed mattis pulvinar enim vitae. Enim ac urna volutpat neque. Magnis eget risus ultricies eget urna a nibh facilisis. Nisl amet ornare blandit est velit morbi. Sed in sagittis.
-          </p>
-        </div>
-        <div class="teachers-banner__box-img">
-          <picture>
-            <source srcset="images/info/info1.avif" type="image/avif">
-            <source srcset="images/info/info1.webp" type="image/webp">
-            <img class="teachers-banner__img" src="images/info/info1.jpg" alt="">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section> <!-- /teachers-banner -->
+  {% from "app/module/_banner/banner-macro.njk" import banner %}
+	{{ banner(
+		"Наша команда",
+		"Lorem ipsum dolor sit amet consectetur. Vitae amet lacus accumsan arcu id. Dolor feugiat sagittis vel nulla eget. Justo duis sollicitudin metus donec cursus neque arcu. Dui sit non ut dolor eget. Donec ac convallis elementum dictum vulputate non vel. Urna faucibus quis sed mattis pulvinar enim vitae. Enim ac urna volutpat neque. Magnis eget risus ultricies eget urna a nibh facilisis. Nisl amet ornare blandit est velit morbi. Sed in sagittis.",
+		"images/info/info1",
+		"jpg")
+	}}
   <section class="section founder"> <!-- founder -->
     <div class="container">
       <h2 class="title">

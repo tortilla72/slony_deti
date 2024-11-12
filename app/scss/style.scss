@@ -8,6 +8,7 @@
 @import '../module/_reviews-popup/_reviews-popup';
 @import '../module/_contact-form/_contact-form';
 @import '../module/_product-card/_product-card';
+@import '../module/_banner/_banner';
 @import '../module/_team-popup/_team-popup';
 @import '../module/_footer/_footer';
 
@@ -43,7 +44,7 @@
 
 .preview__img,
 .home-about__img,
-.banner__img {
+.about-preview__img {
   width: 100%;
   border-radius: $radius;
 }
@@ -318,7 +319,7 @@
 
 .reviews__slide {
   box-sizing: border-box;
-  padding: 40px;
+  padding: 40px 40px 70px;
   width: fit-content;
   height: auto;
   background-color: $bg-light;
@@ -343,26 +344,6 @@
 
 .reviews__btn-wrapper {
   text-align: center;
-}
-
-.reviews__btn {
-  padding: 20px 36px 20px 34px;
-  display: inline-block;
-  font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 1.167;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid $text;
-  border-radius: 10px;
-  transition: $transition-btn;
-  outline: $outline-none;
-  caret-color: transparent;
-
-  &:focus {
-    color: $text-light;
-    background-color: $bg-cart;
-  }
 }
 /*** /reviews ***/
 
@@ -444,7 +425,7 @@
 /*********** /index **********/
 
 /*********** about **********/
-.banner__inner {
+.about-preview__inner {
   display: grid;
   grid-template-columns: 60.345% 37.93%;
   gap: 20px;
@@ -472,7 +453,7 @@
   font-weight: 400;
   font-size: 3.2rem;
 }
-.banner__box-img {
+.about-preview__box-img {
   display: flex;
   align-items: center;
   border-radius: $radius;
@@ -675,7 +656,6 @@
   margin-top: 50px;
 }
 
-
 .courses-favorite__title,
 .courses-shop__title {
   margin-bottom: 40px;
@@ -690,29 +670,6 @@
 /*********** /courses **********/
 
 /*********** teachers **********/
-.teachers-banner__inner {
-  padding: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $bg-light;
-  border-radius: $radius;
-}
-
-.teachers-banner__title {
-  margin-bottom: 20px;
-}
-
-.teachers-banner__text {
-  margin: 0;
-  max-width: 520px;
-  font-size: $font-box;
-  line-height: 1.333;
-}
-
-.teachers-banner__img {
-  width: 100%;
-}
 
 .team {
   margin-bottom: 100px;
@@ -764,8 +721,78 @@
 .team__item-text {
   margin: 0;
 }
-
 /*********** /teachers **********/
+
+/*********** reviews **********/
+.reviews-survey {
+  margin-bottom: 50px;
+}
+
+.reviews-survey__title,
+.reviews-survey__filter {
+  margin-bottom: 40px;
+}
+
+.reviews-survey__slider {
+  margin-bottom: 60px;
+}
+
+.reviews-survey__slide {
+  box-sizing: border-box;
+  padding: 30px 30px 45px;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+
+.reviews-survey__author {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 2.4rem;
+  line-height: 1.167;
+}
+
+.reviews-survey__blockquote {
+  margin: 0 0 29px;
+
+  p {
+    margin: 10px;
+  }
+}
+
+.reviews-survey__slide-link {
+  margin-top: auto;
+  color: inherit;
+  transition: $transition-btn;
+}
+
+.reviews-survey__btn-prev,
+.reviews-survey__btn-next {
+  top: -90px;
+}
+
+.reviews-survey__btn-wrapper {
+  text-align: center;
+}
+
+.reviews-survey__popup-title {
+  padding-right: 30px;
+  span {
+    margin-top: 10px;
+    display: block;
+    font-weight: 500;
+    font-size: $font-box;
+  }
+}
+
+.reviews-survey__text-wrapper p {
+  margin: 0;
+  margin-top: 10px;
+}
+/*********** /reviews **********/
+
 body._pc {
   .offer__item:hover {
     color: $text-light;
@@ -777,7 +804,6 @@ body._pc {
     color: $text-light;
   }
 
-  .reviews__btn:hover,
   .reviews__form-btn:hover {
     color: $text-light;
     background-color: $accent-dark;
@@ -803,6 +829,11 @@ body._pc {
     &::before {
       background-image: url('../images/sprite.svg#question-icon-hover');
     }
+  }
+
+  .reviews-survey__slide-link:hover {
+    color: $accent-light;
+    text-decoration: none;
   }
 }
 

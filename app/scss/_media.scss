@@ -174,11 +174,11 @@
     flex-basis: 46%;
   }
 
-  .banner__inner {
+  .about-preview__inner {
     display: flex;
     flex-direction: column;
   }
-  .banner__box-img {
+  .about-preview__box-img {
     order: -1;
     display: block;
   }
@@ -224,14 +224,6 @@
   .courses-best__inner {
     flex-direction: column;
     gap: 30px;
-  }
-
-  .teachers-banner__inner {
-    flex-direction: column;
-  }
-
-  .teachers-banner__box-img {
-    order: -1;
   }
 }
 
@@ -415,12 +407,7 @@
     transform: translateY(0);
   }
 
-  .teachers-banner__inner {
-    padding-left: $padding-side-mobile;
-    padding-right: $padding-side-mobile;
-  }
-
-  .teachers-banner__text {
+  .reviews-survey__popup-title span {
     font-size: $font-box-small;
   }
 }
@@ -500,9 +487,5 @@
 
   .courses-best__link {
     margin-left: 0;
-  }
-
-  .teachers-banner__text {
-    font-size: 1.6rem;
   }
 }
