@@ -1,0 +1,36 @@
+{% macro contact_form_popup(id, id_form, add_style, name, form_title, form_text) %}
+  <div class="popup contact-form-popup" id="{{ id }}">
+    <div class="container">
+      <form class="contact-form {{ add_style }}" name={{ name }} id={{ id_form }} method="POST">
+        <div class="contact-form__inner">
+          <div class="contact-form__info">
+            <h2 class="title contact-form__title">
+              {{ form_title }}
+            </h2>
+            <p class="box-text contact-form__text">
+              {{ form_text }}
+            </p>
+          </div>
+          <div class="contact-form__box">
+            <input class="contact-form__input" type="text" placeholder="Ваше имя" required>
+            <input class="contact-form__input" type="tel" placeholder="Номер телефона">
+            <input class="contact-form__input" type="email" placeholder="Электронная почта" required>
+            <div class="form-btn-wrapper">
+              <a class="btn-popup-open form-btn" href="#contacts-thanks" data-fancybox>
+                <span class="form-btn__text">
+                    Записаться
+                </span>
+                <span class="form-btn__icon"></span>
+              </a>
+              <span class="form-btn-wrapper__text">
+                  Нажимая на кнопку, вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% include "app/module/_contacts-thanks/_contacts-thanks.html" %}
+
+{% endmacro %}

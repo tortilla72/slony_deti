@@ -1,0 +1,18 @@
+.contact-form-popup {
+  padding: 0;
+  .contact-form {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 864px) {
+  .contact-form-popup .contact-form {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 568px) {
+  .contact-form-popup .contact-form {
+    padding: 80px 10px 40px;
+  }
+}

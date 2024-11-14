@@ -153,5 +153,21 @@ input.reviews-popup__form-input {
   .reviews-thanks__img {
     margin: 0;
   }
+}
 
+@media (max-width: 568px) {
+  .reviews-popup {
+    padding: 40px 30px;
+  }
+
+  .reviews-popup__form {
+    .reviews-popup__form-textarea {
+      font-size: 1.6rem;
+    }
+    .reviews-popup__form-btn {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
 }

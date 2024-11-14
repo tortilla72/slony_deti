@@ -15,12 +15,12 @@
 							Изучайте русский язык в самой удобном вам формате: в группах или индивидуально.<br> Первое занятие бесплатно
 						</p>
 						<div class="form-btn-wrapper preview__form-btn-wrapper">
-							<button class="form-btn" type="button">
+							<a class="form-btn" href="#form-trial"  data-scroll-to>
 								<span class="form-btn__text">
 								Записаться
 								</span>
 								<span class="form-btn__icon"></span>
-							</button>
+							</a>
 							<span class="form-btn-wrapper__text preview__btn__text">
 								Пройдите тест с вашим ребёнком, чтобы подобрать занятия, которые ему точно понравятся
 							</span>
@@ -382,7 +382,10 @@
       "images/rewies-thanks",
       "png")
       }}
+
+		{% include "app/module/_contacts-thanks/_contacts-thanks.html" %}
 	<!-- /POP-UP -->
+
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

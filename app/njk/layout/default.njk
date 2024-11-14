@@ -20,6 +20,17 @@
         {% include "app/module/_breadcrumbs/_breadcrumbs.html" %}
       {% endif %}
 	    {% block content %}{% endblock %}
+    <!-- POP-UP для записи-->
+          {% from "app/module/_contact-form-popup/contact-form-popup-macro.njk" import contact_form_popup %}
+      {{ contact_form_popup(
+        "trial-popup",
+        "form-trial-popup",
+        "",
+        "form-trial",
+        "Приходите на пробное занятие",
+        "Вместе с вами и вашим ребёнком разработаем стратегию обучения и подберём подходящую программу")
+      }}
+    <!-- /POP-UP для записи-->
     </main>
    {% include "app/module/_footer/_footer.html" %}
   </div>

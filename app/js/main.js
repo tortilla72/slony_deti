@@ -146,6 +146,7 @@ $(function () {
       if (countFilterChecked == 0) {
         $('.filter-tags__reset').prop('disabled', true);
       }
+      console.log(countFilterChecked);
     }
     console.log(countFilterChecked);
   });

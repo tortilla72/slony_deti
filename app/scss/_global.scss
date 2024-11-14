@@ -163,6 +163,7 @@ body {
   line-height: 2.8rem;
   color: $text;
   text-align: center;
+  text-decoration: none;
   background-color: $bg;
   border: solid $headerbtn-border transparent;
   border-radius: 20px;
@@ -226,8 +227,11 @@ body {
 }
 
 .form-btn__text {
+  display: inline-block;
   padding: 0 105px 0 35px;
   text-align: center;
+  line-height: 70px;
+  text-decoration: none;
 }
 
 .form-btn__icon {
@@ -262,9 +266,9 @@ body {
   line-height: 1.1875;
   color: $text-light;
   text-align: center;
+  text-decoration: none;
   background-color: transparent;
   box-shadow: $headerbtn-shadow;
-  //background-position: 0% 100%;
   border: 1px solid $accent-light;
   border-radius: 30px;
   cursor: pointer;
