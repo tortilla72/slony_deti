@@ -191,7 +191,7 @@
 						<span class="tarif__price">
 							$9/урок
 						</span>
-						<button class="tarif__btn">Записаться</button>
+						<a class="btn-popup-open tarif__btn" href="#popup-tarif" data-fancybox>Записаться</a>
 						<a class="box-link tarif__link" href="#">
 							Узнать подробнее
 						</a>
@@ -222,7 +222,7 @@
 						<span class="tarif__price">
 							$12/урок
 						</span>
-						<button class="tarif__btn">Записаться</button>
+						<a class="btn-popup-open tarif__btn" href="#popup-tarif" data-fancybox>Записаться</a>
 						<a class="box-link tarif__link" href="#">
 							Узнать подробнее
 						</a>
@@ -253,7 +253,7 @@
 						<span class="tarif__price">
 							$15/урок
 						</span>
-						<button class="tarif__btn">Записаться</button>
+						<a class="btn-popup-open tarif__btn" href="#popup-tarif" data-fancybox>Записаться</a>
 						<a class="box-link tarif__link" href="#">
 							Узнать подробнее
 						</a>
@@ -385,6 +385,17 @@
 
 		{% include "app/module/_contacts-thanks/_contacts-thanks.html" %}
 	<!-- /POP-UP -->
+	<!-- POP-UP для записи по конкретному тарифу-->
+  {% from "app/module/_contact-form-popup/contact-form-popup-macro.njk" import contact_form_popup %}
+    {{ contact_form_popup(
+        "popup-tarif",
+        "form-tarif",
+        "",
+        "form-tarif",
+        'Записаться на курс для занятий по тарифу "Группа"',
+        "Вместе с вами и вашим ребёнком разработаем стратегию обучения")
+    }}
+  <!-- /POP-UP для записи по конкретному тарифу-->
 
 {% endblock %}
 {% block scripts %}

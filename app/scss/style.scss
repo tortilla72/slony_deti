@@ -281,6 +281,9 @@
 .tarif__btn {
   position: relative;
   margin-bottom: 30px;
+  text-align: center;
+  color: $text;
+  text-decoration: none;
   background-color: $bg;
   border: 1px solid $bg-dark;
   border-radius: $radius;

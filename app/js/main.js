@@ -40,6 +40,14 @@ $(function () {
   // Плавный скролл
   let scroll = new LocomotiveScroll();
 
+  $('.tarif__btn').on('click', function() {
+    let parentItem = $(this).closest('.tarif__item');
+    let tarifName = parentItem.find('.tarif__title').text();
+    $('#popup-tarif')
+     .find('.contact-form__title')
+     .text('Записаться на курс для занятий по тарифу "' + tarifName + '"');
+  });
+
   // Слайдер отзывов
   const swiperReviews = new Swiper('.reviews__slider', {
     slidesPerView: 1,
