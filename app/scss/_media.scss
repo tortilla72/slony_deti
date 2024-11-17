@@ -108,6 +108,11 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .product__info {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 864px) {
@@ -225,6 +230,24 @@
     flex-direction: column;
     gap: 30px;
   }
+
+  .product-preview__inner {
+    flex-direction: column;
+  }
+
+  .product__info {
+    flex-direction: row;
+    flex-basis: auto;
+    flex-wrap: wrap;
+  }
+
+  .product-info__item {
+    flex-basis: 47%;
+  }
+
+  .product-preview__box-img {
+    order: -1;
+  }
 }
 
 @media (max-width: 700px) {
@@ -255,6 +278,18 @@
 
   .statistics__text {
     font-size: $font-box;
+  }
+
+  .product-info__item {
+    flex-basis: 100%;
+  }
+
+  .product-info__holder {
+    justify-content: start;
+  }
+
+  .product-preview__btn {
+    width: auto;
   }
 }
 
@@ -487,5 +522,9 @@
 
   .courses-best__link {
     margin-left: 0;
+  }
+
+  .product-preview__box-img {
+    flex-basis: 400px;
   }
 }

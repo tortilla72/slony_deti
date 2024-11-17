@@ -1,11 +1,100 @@
-{% set title = "Учителя" %}
+{% set title = "Название курса или материала" %}
 {% set pageSlug  = "product" %}
 {% set parentPage = "courses" %}
-{% set parentPageName = "Название курса или материала" %}
+{% set parentPageName = "Курсы" %}
 
 {% extends "app/njk/layout/default.njk" %}
 {% block content %}
+  <section class="product-preview"> <!-- product-preview__title -->
+    <div class="container">
+      <h1 class="page-title product-preview__title">
+        Название курса или материала
+      </h1>
+      <form class="product-preview__tags-form">
+        <input class="product-preview__tags-input" type="hidden" name="product-tag-filter" value="val">
+        <button class="product-preview__tags-btn" type="button">
+            для учителей
+        </button>
+        <button class="product-preview__tags-btn"  type="button">
+            курсы
+        </button>
+        <button class="product-preview__tags-btn"  type="button">
+            для родителей
+        </button>
+      </form>
+      <div class="product-preview__inner">
+        <div class="product__info">
+          <div class="product-info__item product-info__item--time">
+            <h3 class="product__info-title">
+              <span>45</span> минут
+            </h3>
+            <p class="product-info__text">
+              длительность урока
+            </p>
+            <div class="product-info__holder">
+              <div class="product-info__box-img">
+                <img class="product-info__img" src="images/sprite.svg#clock-icon" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="product-info__item product-info__item--age">
+            <h3 class="product__info-title">
+              Для билингвов до <span>15</span> лет
+            </h3>
+            <p class="product-info__text">
+            </p>
+          </div>
+          <div class="product-info__item product-info__item--payment">
+            <h3 class="product__info-title">
+              Способы оплаты
+            </h3>
+            <p class="product-info__text">
+              Принимаем оплату в рублях и в иностранной валюте
+            </p>
+            <div class="product-info__holder">
+              <div class="product-info__box-img">
+                <img class="product-info__img" src="images/sprite.svg#clock-icon" alt="">
+              </div>
+              <div class="product-info__box-img">
+                <img class="product-info__img" src="images/sprite.svg#clock-icon" alt="">
+              </div>
+              <div class="product-info__box-img">
+                <img class="product-info__img" src="images/sprite.svg#clock-icon" alt="">
+              </div>
+              <div class="product-info__box-img">
+                <img class="product-info__img" src="images/sprite.svg#clock-icon" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="product-info__item product-info__item--date">
+            <h3 class="product__info-title">
+              Старт:<span>16.10.2024</span>
+            </h3>
+            <p class="product-info__text">
+              Свободно <span>8</span> мест
+            </p>
+            <p class="product-info__subtext">
+              Успейте записаться, количество мест ограничено
+            </p>
+          </div>
+        </div>
+        <div class="product-preview__box-img">
+          	<picture>
+							<source srcset="images/products/product-img-1.avif" type="image/avif">
+                <source srcset="images/products/product-img-1.webp" type="image/webp">
+							<img class="product-preview__img" src="images/products/product-img-1.png" alt="">
+						</picture>
+            <div class="product-preview__btn-wrapper">
+              <a class="tarif__btn product-preview__btn" href="#">Записаться</a>
+            </div>
+        </div>
 
+    </div>
+  </section> <!-- /product-preview__title -->
+
+  <section class="section">
+
+  </section>
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

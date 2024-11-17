@@ -25,8 +25,8 @@
             </p>
           </div>
           <div class="courses-best__box-btn">
-            <a class="btn-popup-open buy-btn courses-best__btn" href="#popup-course-1" data-fancybox>Записаться</a>
-            <a class="box-link courses-best__link" href="#">Подробнее</a>
+            <a class="btn-popup-open buy-btn courses-best__btn" href="#popup-course" data-fancybox>Записаться</a>
+            <a class="box-link courses-best__link" href="product.html">Подробнее</a>
           </div>
         </div>
         <div class="courses-best__item">
@@ -45,8 +45,8 @@
             </p>
           </div>
           <div class="courses-best__box-btn">
-            <a class="btn-popup-open buy-btn courses-best__btn" href="#popup-course-1" data-fancybox>Записаться</a>
-            <a class="box-link courses-best__link" href="#">Подробнее</a>
+            <a class="btn-popup-open buy-btn courses-best__btn" href="#popup-course" data-fancybox>Записаться</a>
+            <a class="box-link courses-best__link" href="product.html">Подробнее</a>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
       <div class="cards-wrapper">
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             1,
             "Название",
@@ -68,7 +68,7 @@
         }}
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             1,
             "Название",
@@ -78,7 +78,7 @@
         }}
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             1,
             "Название",
@@ -132,7 +132,7 @@
       <div class="cards-wrapper courses-shop__content">
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             0,
             "Название",
@@ -142,7 +142,7 @@
         }}
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             0,
             "Название",
@@ -152,7 +152,7 @@
         }}
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             0,
             "Название",
@@ -162,7 +162,7 @@
         }}
         {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
           {{ product_card(
-            "popup-course-1",
+            "popup-course",
             "Главный тэг",
             0,
             "Название",
@@ -176,10 +176,10 @@
    <!-- POP-UP для записи на конкретный курс-->
   {% from "app/module/_contact-form-popup/contact-form-popup-macro.njk" import contact_form_popup %}
     {{ contact_form_popup(
-        "popup-course-1",
-        "form-course-1",
+        "popup-course",
+        "form-course",
         "",
-        "form-course-1",
+        "form-course",
         'Записаться на курс "Название"',
         "Вместе с вами и вашим ребёнком разработаем стратегию обучения")
     }}

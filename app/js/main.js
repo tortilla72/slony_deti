@@ -51,10 +51,12 @@ $(function () {
   // Слайдер отзывов
   const swiperReviews = new Swiper('.reviews__slider', {
     slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 40,
     breakpoints: {
       1025: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
       },
     },
     navigation: {
@@ -115,10 +117,12 @@ $(function () {
   // Слайдер видео на странице about
   const swiperAboutVideo = new Swiper('.about-video__slider', {
     slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 40,
     breakpoints: {
       1025: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
       },
     },
     navigation: {
@@ -173,13 +177,16 @@ $(function () {
   // Слайдер отзывов
   const swiperReviewsSurvey = new Swiper('.reviews-survey__slider', {
     slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 40,
     breakpoints: {
       1025: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
       },
       701: {
         slidesPerView: 2,
+        slidesPerGroup:2 ,
       },
     },
     navigation: {
@@ -216,6 +223,14 @@ $(function () {
           countSize = countSize - text.length;
         }
       });
+  });
+
+  // Обработка события нажатия кнопки тэга на странице товара
+  $('.product-preview__tags-btn').on('click', function() {
+    let formTags = $(this).closest('.product-preview__tags-form');
+    let inputTag = formTags.find('.product-preview__tags-input');
+    let textTag = $(this).text().trim(); // Обрезаем пробелы в начале и в конце
+    inputTag.prop('value', textTag);
   });
 
   //= ../module/_footer/_footer.js
