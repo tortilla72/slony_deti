@@ -83,7 +83,8 @@
     padding-right: $padding-side-mobile;
   }
 
-  .founder__item {
+  .founder__item,
+  .product-about__wrapper {
     justify-content: space-between;
   }
   .founder__info,
@@ -247,6 +248,23 @@
 
   .product-preview__box-img {
     order: -1;
+  }
+
+  .product-about__wrapper {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .product-about__title {
+    text-align: left;
+  }
+
+  .product-about__box-img {
+    width: 100%;
+  }
+
+  .product-about__img {
+    height: auto;
   }
 }
 
@@ -416,7 +434,8 @@
     margin-top: 20px;
   }
 
-  .founder__info {
+  .founder__info,
+  .product-about__inner {
     padding: 40px $padding-side-mobile;
   }
 

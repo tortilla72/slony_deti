@@ -5,7 +5,7 @@
 
 {% extends "app/njk/layout/default.njk" %}
 {% block content %}
-  <section class="product-preview"> <!-- product-preview__title -->
+  <section class="product-preview"> <!-- product-preview -->
     <div class="container">
       <h1 class="page-title product-preview__title">
         Название курса или материала
@@ -90,11 +90,31 @@
         </div>
 
     </div>
-  </section> <!-- /product-preview__title -->
-
-  <section class="section">
-
-  </section>
+  </section> <!-- /product-preview -->
+  <section class="section product-about"> <!-- product-about -->
+    <div class="container">
+      <div class="product-about__wrapper">
+        <div class="product-about__box-img">
+          <picture>
+            <source srcset="images/founder-1.avif" type="image/avif">
+            <source srcset="images/founder-1.webp" type="image/webp">
+            <img class="product-about__img" src="images/founder-1.jpg" alt="">
+          </picture>
+        </div>
+        <div class="product-about__inner">
+          <h2 class="title product-about__title">О чём курс</h2>
+          <div class="product-about__text">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quasi quas, nesciunt magnam voluptas at. Neque, voluptatem sint. Sed debitis ut enim sapiente sunt alias quae optio asperiores rerum saepe.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quasi quas, nesciunt magnam voluptas at. Neque, voluptatem sint. Sed debitis ut enim sapiente sunt alias quae optio asperiores rerum saepe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /product-about -->
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>
