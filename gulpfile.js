@@ -32,14 +32,12 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const clean = require('gulp-clean');
 
 function nunjucks() {
-  return (
-    src('app/njk/*.njk')
-      .pipe(nunjucksRender())
-      .pipe(htmlbeautify({ 'indent_with_tabs': false }))
-      .pipe(removeEmptyLines())
-      .pipe(dest('app'))
-      .pipe(browserSync.stream())
-  );
+  return src('app/njk/*.njk')
+    .pipe(nunjucksRender())
+    .pipe(htmlbeautify({ indent_with_tabs: false }))
+    .pipe(removeEmptyLines())
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
 }
 
 function styles() {

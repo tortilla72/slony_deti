@@ -1,8 +1,9 @@
 .product-card {
   flex-basis: 22.931%;
-  //max-width: 266px;
   min-height: 413px;
   padding: 20px 20px 40px;
+  display: flex;
+  flex-direction: column;
   border-radius: $radius;
   background-color: $bg-light;
 }
@@ -58,11 +59,17 @@
   margin-bottom: 20px;
 }
 
+.product-card__box-btn {
+  margin-top: auto;
+}
+
 .product-card__btn {
   width: 100%;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 .product-card__link {
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -95,6 +102,7 @@ body._pc {
   .product-card {
     flex-basis: 100%;
   }
+
   .product-card__btn {
     margin-bottom: 0;
     width: auto;

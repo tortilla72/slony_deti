@@ -978,6 +978,191 @@
   }
 }
 
+.schedule {
+  margin-bottom: 45px;
+}
+.schedule__inner {
+  padding: 60px;
+  background-color: $bg-light;
+  border-radius: $radius;
+}
+
+.schedule__btns {
+  margin-bottom: 57px;
+}
+.schedule__btn {
+  padding: 0;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.schedule__btn + .schedule__btn {
+  margin-left: 10px;
+
+  &::before {
+    content: '>';
+    margin-right: 10px;
+  }
+}
+
+.schedule__btn:disabled {
+  color: $text-tabs-not-active;
+  cursor: default;
+}
+
+.schedule__tabs {
+  min-height: 625px;
+}
+
+.schedule__tabs-item {
+  min-height: 100%;
+  display: none;
+  gap: 90px;
+
+  &--active {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.schedule__tabs-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule__tabs-title {
+  margin-bottom: 20px;
+}
+.schedule__tabs-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: $font-box;
+  line-height: 1.16667;
+}
+
+.schedule__price {
+  margin-top: auto;
+}
+
+.schedule__price-text {
+  margin: 0 0 25px;
+  font-size: 4.6rem;
+  line-height: 1.125;
+}
+
+.schedule__price-num {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.schedule__price-link {
+  font-size: $font-box;
+  line-height: 1.16667;
+  color: $text;
+  transition: $transition-link;
+}
+
+.schedule__list {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.schedule__list-item {
+  position: relative;
+  padding: 30px;
+  min-height: 195px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: $bg;
+  border-radius: $radius;
+}
+
+.schedule__list-info {
+  max-width: 280px;
+}
+
+.schedule__list-title {
+  margin: 0;
+  font-size: 4.8rem;
+}
+.schedule__list-subtitle {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+.schedule__list-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.schedule__list-aside-text {
+}
+
+.schedule__list-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  padding: 0;
+  width: 40px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 14px;
+    display: block;
+    background-image: url('../images/sprite.svg#small-arrow-right');
+    @include svg-icon;
+  }
+}
+
+.schedule__list-item--other {
+  padding-top: 20px;
+
+  .schedule__list-aside {
+    justify-content: center;
+  }
+
+  .schedule__list-btn {
+    top: auto;
+    right: auto;
+    left: 30px;
+    bottom: 20px;
+
+    &::after {
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.schedule__list-text {
+  margin: 0;
+  font-size: $font-box;
+}
+.schedule__list-box-img {
+}
+.schedule__list-img {
+  width: 100%;
+}
+
+.recommended {
+  margin-bottom: 100px;
+}
 /*********** /product **********/
 
 body._pc {
@@ -1028,6 +1213,53 @@ body._pc {
     background-color: $bg-filter-checked;
     text-shadow: 1px 0 $text-light;
   }
+
+  .schedule__price-link {
+    text-decoration: none;
+    &:hover {
+      color: $accent-light;
+    }
+  }
+
+  .schedule__list-btn:hover {
+    &::after {
+      animation: small-arrow-right 1.5s linear infinite;
+    }
+  }
+
+  .schedule__list-item--other .schedule__list-btn:hover {
+    &::after {
+      animation: small-arrow-left 1.5s linear infinite;
+    }
+  }
 }
 
+@keyframes small-arrow-right {
+  0% {
+    right: 0;
+  }
+  25% {
+    right: -5px;
+  }
+  75% {
+    right: 3px;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes small-arrow-left {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 5px;
+  }
+  75% {
+    left: -3px;
+  }
+  100% {
+    left: 0;
+  }
+}
 @import 'media';

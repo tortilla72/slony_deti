@@ -1,3 +1,5 @@
+'use strict';
+
 const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i);
@@ -40,12 +42,12 @@ $(function () {
   // Плавный скролл
   let scroll = new LocomotiveScroll();
 
-  $('.tarif__btn').on('click', function() {
+  $('.tarif__btn').on('click', function () {
     let parentItem = $(this).closest('.tarif__item');
     let tarifName = parentItem.find('.tarif__title').text();
     $('#popup-tarif')
-     .find('.contact-form__title')
-     .text('Записаться на курс для занятий по тарифу "' + tarifName + '"');
+      .find('.contact-form__title')
+      .text('Записаться на курс для занятий по тарифу "' + tarifName + '"');
   });
 
   // Слайдер отзывов
@@ -186,7 +188,7 @@ $(function () {
       },
       701: {
         slidesPerView: 2,
-        slidesPerGroup:2 ,
+        slidesPerGroup: 2,
       },
     },
     navigation: {
@@ -226,11 +228,58 @@ $(function () {
   });
 
   // Обработка события нажатия кнопки тэга на странице товара
-  $('.product-preview__tags-btn').on('click', function() {
+  $('.product-preview__tags-btn').on('click', function () {
     let formTags = $(this).closest('.product-preview__tags-form');
     let inputTag = formTags.find('.product-preview__tags-input');
     let textTag = $(this).text().trim(); // Обрезаем пробелы в начале и в конце
     inputTag.prop('value', textTag);
+  });
+
+  // Вкладки с расписанием и оплатой на странице товара
+
+  function openScheduleTab(el) {
+    const button = $(el).data('button');
+    const tabContent = $('#' + button);
+
+    $('.schedule__tabs-item').removeClass('schedule__tabs-item--active');
+    tabContent.addClass('schedule__tabs-item--active');
+  }
+
+  $('.schedule__btn').on('click', function () {
+    $('.schedule__btn--payment').prop('disabled', true);
+    openScheduleTab(this);
+  });
+
+  $(
+    '.schedule__list-item:not(.schedule__list-item--other) .schedule__list-btn'
+  ).on('click', function () {
+    $('.schedule__btn--payment').prop('disabled', false);
+    openScheduleTab(this);
+  });
+
+  // Слайдер рекомендуемых материалов на странице курса
+  const swiperRecomended = new Swiper('.recommended__slider', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 32,
+    breakpoints: {
+      1121: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+      864: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      569: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+    },
+    navigation: {
+      nextEl: '.slider__btn-next',
+      prevEl: '.slider__btn-prev',
+    },
   });
 
   //= ../module/_footer/_footer.js

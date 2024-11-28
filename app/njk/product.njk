@@ -115,6 +115,206 @@
       </div>
     </div>
   </section> <!-- /product-about -->
+
+
+
+  <section class="section schedule"> <!-- schedule -->
+    <div class="container">
+      <div class="schedule__inner">
+        <div class="schedule__btns">
+          <button class="schedule__btn" type="button" data-button="content-1">
+            1. Расписание
+          </button>
+          <button class="schedule__btn schedule__btn--payment" type="button" data-button="content-2" disabled>
+            2. Оплата
+          </button>
+        </div>
+        <div class="schedule__tabs">
+          <div class="schedule__tabs-item schedule__tabs-item--active" id="content-1">
+            <div class="schedule__tabs-info">
+              <h3 class="title schedule__tabs-title">Выберите расписание</h3>
+              <p class="schedule__tabs-text">
+                Занятия ведутся каждую неделю в одни и те же дни. Если вам не подошла группа, её можно сменить в любой момент
+              </p>
+            <div class="schedule__price">
+              <p class="schedule__price-text">
+                <span class="schedule__price-num">1200</span>
+                 руб. / урок
+              </p>
+              <a class="schedule__price-link" href="#">
+                Что входит в стоимость?
+              </a>
+            </div>
+
+            </div>
+            <div class="schedule__list">
+
+
+              <div class="schedule__list-item">
+                <div class="schedule__list-info">
+                  <p class="schedule__list-title">
+                    Пн
+                  </p>
+                  <p class="schedule__list-subtitle">
+                    12:00 по МСК
+                  </p>
+                </div>
+                <div class="schedule__list-aside">
+                  <span class="schedule__list-aside-text">
+                    Осталось 3 места из 6
+                  </span>
+                </div>
+                <button class="schedule__list-btn" type="button" data-button="content-2">
+                  <span class="visually-hidden">Оплатить урок в понедельник в 12:00</span>
+                </button>
+              </div>
+
+              <div class="schedule__list-item">
+                <div class="schedule__list-info">
+                  <p class="schedule__list-title">
+                    Пт
+                  </p>
+                  <p class="schedule__list-subtitle">
+                    16:00 по МСК
+                  </p>
+                </div>
+                <div class="schedule__list-aside">
+                  <span class="schedule__list-aside-text">
+                    Осталось 2 места из 6
+                  </span>
+                </div>
+                <button class="schedule__list-btn" type="button" data-button="content-2">
+                  <span class="visually-hidden">Оплатить урок в пятницу в 16:00</span>
+                </button>
+              </div>
+
+              <div class="schedule__list-item schedule__list-item--other">
+                <div class="schedule__list-info">
+                  <p class="schedule__list-text">
+                    Здесь нет подходящего для меня расписания
+                  </p>
+                </div>
+                <div class="schedule__list-aside">
+                  <div class="schedule__list-box-img">
+                    <picture>
+							        <source srcset="images/products/product-img-1.avif" type="image/avif">
+                      <source srcset="images/products/product-img-1.webp" type="image/webp">
+							        <img class="schedule__list-img" src="images/products/product-img-1.png" alt="">
+						        </picture>
+                  </div>
+                </div>
+                <a class="schedule__list-btn" href="#form-schedule" data-scroll-to>
+                  <span class="visually-hidden">Оставить контактные данные</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="schedule__tabs-item"  id="content-2">
+            Оплата
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- /schedule -->
+  <!-- contact-form -->
+	{% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+		{{ contact_form(
+			"form-schedule",
+			"",
+			"form-schedule",
+			"Не можете выбрать? Запишитесь на консультацию!",
+      "Ответим на любые ваши вопросы и вместе подберём группу, которая идеально подойдёт вашему ребёнку")
+	}}
+  <!-- /contact-form -->
+  <section class="section recommended"> <!-- recommended -->
+    <div class="container">
+      <h2 class="title slider__title">
+        Рекомендуемые материалы
+      </h2>
+      <div class="slider__box recommended__slider-box">
+        <div class="swiper recommended__slider">
+          <div class="swiper-wrapper recommended__slider-wrapper">
+
+            <div class="swiper-slide recommended__slide">
+              {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+                {{ product_card(
+                  "popup-course",
+                  "Главный тэг",
+                  0,
+                  "Название",
+                  "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+                  "images/products/product-img-1",
+                  "png",
+                  "Купить")
+              }}
+            </div>
+            <div class="swiper-slide recommended__slide">
+              {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+                {{ product_card(
+                  "popup-course",
+                  "Главный тэг",
+                  0,
+                  "Название",
+                  "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+                  "images/products/product-img-1",
+                  "png",
+                  "Купить")
+              }}
+            </div>
+            <div class="swiper-slide recommended__slide">
+              {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+                {{ product_card(
+                  "popup-course",
+                  "Главный тэг",
+                  0,
+                  "Название",
+                  "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+                  "images/products/product-img-1",
+                  "png",
+                  "Купить")
+              }}
+            </div>
+            <div class="swiper-slide recommended__slide">
+              {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+                {{ product_card(
+                  "popup-course",
+                  "Главный тэг",
+                  0,
+                  "Название",
+                  "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+                  "images/products/product-img-1",
+                  "png",
+                  "Купить")
+              }}
+            </div>
+            <div class="swiper-slide recommended__slide">
+              {% from "app/module/_product-card/product-card-macro.njk" import product_card %}
+                {{ product_card(
+                  "popup-course",
+                  "Главный тэг",
+                  0,
+                  "Название",
+                  "Lorem ipsum dolor sit amet consectetur. Amet dui tristique nulla mi. Suspendisse enim ut posuere.",
+                  "images/products/product-img-1",
+                  "png",
+                  "Купить")
+              }}
+            </div>
+          </div>
+        </div>
+				<button class="swiper-button-prev slider__btn-prev"></button>
+  			<button class="swiper-button-next slider__btn-next"></button>
+      </div>
+    </div>
+  </section>  <!-- /recommended -->
+  {% from "app/module/_contact-form/contact-form-macro.njk" import contact_form %}
+	{{ contact_form(
+		"form-question",
+		"",
+		"form-question",
+		"Остались вопросы?",
+		"Оставьте заявку и мы свяжемся с вами в течение 30 минут в рабочее время с 10:00 до 20:00 по МСК. Задайте нам вопросы, а мы на них ответим и поможем подобрать занятия")
+	}}
 {% endblock %}
 {% block scripts %}
 	<script src="js/main.min.js"></script>

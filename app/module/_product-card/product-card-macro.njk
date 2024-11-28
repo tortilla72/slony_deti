@@ -1,4 +1,4 @@
-{% macro product_card(id_popup, main_tag, favorite, product_name, product_description, path_product_img, product_img_extension) %}
+{% macro product_card(id_popup, main_tag, favorite, product_name, product_description, path_product_img, product_img_extension, button_text) %}
   <div class="product-card">
     <div class="product-card__top">
       <a class="product-card__tag" href="#">{{main_tag}}</a>
@@ -16,7 +16,7 @@
         {{product_description}}
     </p>
     <div class="product-card__box-btn">
-      <a class="btn-popup-open buy-btn product-card__btn" href="#{{ id_popup }}" data-fancybox>Записаться</a>
+      <a class="btn-popup-open buy-btn product-card__btn" href="#{{ id_popup }}" data-fancybox>{{button_text}}</a>
       <a class="box-link product-card__link" href="product.html">Подробнее</a>
     </div>
   </div>
