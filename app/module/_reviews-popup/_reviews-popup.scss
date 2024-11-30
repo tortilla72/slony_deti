@@ -1,6 +1,6 @@
 /* reviews__popup */
 .reviews-popup {
-  padding-bottom:36px;
+  padding-bottom: 36px;
 }
 
 .reviews-popup__title {
@@ -94,6 +94,12 @@ input.reviews-popup__form-input {
   transition: $transition-btn;
 }
 
+body._pc {
+  .reviews-popup__form-btn:hover {
+    color: $text-light;
+    background-color: $accent-dark;
+  }
+}
 /* /reviews__popup */
 
 /* reviews__thanks */
@@ -108,7 +114,6 @@ input.reviews-popup__form-input {
   display: block;
 }
 /* /reviews__thanks */
-
 
 @media (max-width: 1120px) {
   .reviews-popup__form-bottom {
@@ -155,6 +160,16 @@ input.reviews-popup__form-input {
   }
 }
 
+@media (max-width: 700px) {
+  .reviews-popup__form-btn-wrapper {
+    flex-wrap: wrap;
+  }
+  .reviews-popup__form-btn-wrapper-text {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 568px) {
   .reviews-popup {
     padding: 40px 30px;
@@ -162,12 +177,18 @@ input.reviews-popup__form-input {
 
   .reviews-popup__form {
     .reviews-popup__form-textarea {
+      padding: 20px;
       font-size: 1.6rem;
+      border-radius: 10px;
     }
     .reviews-popup__form-btn {
       width: 100%;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding: 20px;
+      font-size: $font-box-small;
     }
+  }
+
+  .reviews-popup__text {
+    margin: 20px 0 30px;
   }
 }

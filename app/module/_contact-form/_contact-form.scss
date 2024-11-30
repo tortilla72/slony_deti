@@ -49,6 +49,25 @@ input.contact-form__input {
   margin-top: 10px;
 }
 
+@media (max-width: 1024px) {
+  input.contact-form__input {
+    width: 320px;
+  }
+}
+
+@media (max-width: 864px) {
+  .contact-form__inner {
+    display: block;
+  }
+
+  .contact-form__info {
+    margin-bottom: 40px;
+  }
+
+  input.contact-form__input {
+    width: 100%;
+  }
+}
 
 @media (max-width: 568px) {
   .contact-form {
